@@ -20,8 +20,13 @@ namespace EngLearningApp
         private void button1_Click(object sender, EventArgs e)
         {
             FileReader fileReader = new FileReader();
+            TextFormatter textFormatter = new TextFormatter();
 
-            fileReader.readPdfToString(@"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf");
+            string fullText = fileReader.readPdfToString(@"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf"); //TODO: fix constant path
+
+            string preFormattedText = textFormatter.preFormattingBeforeLisiting(fullText);
+
+            List<string> formattedText = textFormatter.strToListAlongWhiteSpaces(preFormattedText);
         }
     }
 }
