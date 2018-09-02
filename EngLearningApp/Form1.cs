@@ -26,7 +26,9 @@ namespace EngLearningApp
 
             string preFormattedText = textFormatter.preFormattingBeforeLisiting(fullText);
 
-            List<string> formattedText = textFormatter.strToListAlongWhiteSpaces(preFormattedText);
+            List<string> wordList = textFormatter.strToListAlongWhiteSpaces(preFormattedText);
+
+            var wordSet = textFormatter.removeDuplicateWordsFromList(wordList);
         }
     }
 }

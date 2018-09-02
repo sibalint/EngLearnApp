@@ -1,4 +1,10 @@
-﻿namespace EngLearningApp
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EngLearningApp
 {
     public static class RemoveFromText
     {
@@ -8,6 +14,17 @@
             text = text.Replace("!", "");
             text = text.Replace("?", "");
             text = text.Replace(",", "");
+            text = text.Replace("\"", "");
+            text = text.Replace("\'", "");
+            text = text.Replace("(", "");
+            text = text.Replace(")", "");
+            text = text.Replace("\\", "");
+            text = text.Replace(";", "");
+            text = text.Replace(":", "");
+
+            //trim - chars
+            text = text.Replace(" -", " ");
+            text = text.Replace("- ", " ");
 
             return text;
         }

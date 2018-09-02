@@ -23,6 +23,14 @@ namespace EngLearningApp
             return text.Split(' ').ToList();
         }
 
+        public List<string> removeDuplicateWordsFromList(List<string> words)
+        {
+            HashSet<string> set = new HashSet<string>(words);
+            var list = set.ToList();
+            var ascendingOrder = list.OrderBy(i => i).ToList();
+            return ascendingOrder;
+
+        }
 
 
 
