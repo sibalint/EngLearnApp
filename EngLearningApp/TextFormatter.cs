@@ -13,7 +13,7 @@ namespace EngLearningApp
 
             List<string> wordListWhitoutDuplicateWords= removeDuplicateWordsFromList(wordList);
 
-            var result= RemoveFromList.plural(wordListWhitoutDuplicateWords);
+            var result= RemoveFromList.affix(wordListWhitoutDuplicateWords);
 
             return result;
         }

@@ -1,0 +1,4 @@
+EngLearningApp/bin/*
+EngLearningApp/obj/Debug/*
+packages/*
+.vs
