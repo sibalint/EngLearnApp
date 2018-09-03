@@ -4,20 +4,19 @@ namespace EngLearningApp
 {
     public static class RemoveFromList
     {
+        private static List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "ing", "\'s", "\'ll", "\n't", "\'t", "\'ve", "\'re" }); //affixes=ragok
+
         public static List<string> plural(List<string> wordList) // plural = tobbes szam
         {
             var resultList = new List<string>(wordList);
             foreach (var word in wordList)
             {
-                if(resultList.Contains(word+'s'))
+                foreach (var affix in affixes)
                 {
-                    resultList.Remove(word + 's');
+                    if (resultList.Contains(word + affix))
+                        resultList.Remove(word + affix);
                 }
-
-                if (resultList.Contains(word + "es"))
-                {
-                    resultList.Remove(word + "es");
-                }
+                
             }
 
             return resultList;
