@@ -22,7 +22,9 @@ namespace EngLearningApp
             FileReader fileReader = new FileReader();
             TextFormatter textFormatter = new TextFormatter();
 
-            string fullText = fileReader.readPdfToString(@"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf"); //TODO: fix constant path
+
+            //C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf
+            string fullText = fileReader.readTxtToString(@"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt"); //TODO: fix constant path
 
             string preFormattedText = textFormatter.preFormattingBeforeLisiting(fullText);
 

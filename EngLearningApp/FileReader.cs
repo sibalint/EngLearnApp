@@ -29,5 +29,11 @@ namespace EngLearningApp
             return text.ToString();
         }
 
+        public string readTxtToString(string filePath)
+        {
+            return File.ReadAllText(filePath);            
+        }
+
+
     }
 }

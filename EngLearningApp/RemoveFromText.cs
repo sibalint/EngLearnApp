@@ -1,30 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EngLearningApp
+﻿namespace EngLearningApp
 {
     public static class RemoveFromText
     {
         public static string unnecessarySpecCharacters(string text)
         {
+
+            text = text.Replace(" --> ", ""); //need if read subtitles
+
             text = text.Replace(".", "");
             text = text.Replace("!", "");
             text = text.Replace("?", "");
             text = text.Replace(",", "");
             text = text.Replace("\"", "");
-            text = text.Replace("\'", "");
             text = text.Replace("(", "");
             text = text.Replace(")", "");
             text = text.Replace("\\", "");
             text = text.Replace(";", "");
             text = text.Replace(":", "");
+            text = text.Replace("\r", "");
 
             //trim - chars
             text = text.Replace(" -", " ");
             text = text.Replace("- ", " ");
+
+            //text = text.Replace("\'", ""); //don't -> dont
+            text = text.Replace(" \'", ""); 
+            text = text.Replace("\' ", "");
 
             return text;
         }
