@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoveFromList.cs" />
     <Compile Include="RemoveFromText.cs" />
     <Compile Include="TextFormatter.cs" />
     <EmbeddedResource Include="Form1.resx">
