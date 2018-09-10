@@ -10,6 +10,9 @@ namespace EngLearningApp
         private string filePath { get; set; }
         private List<Word> wordDirectory = new List<Word>();
 
+        private List<string> greenList = new List<string>();
+        private List<string> yellowList = new List<string>();
+        private List<string> redList = new List<string>();
         public Form1()
         {
             InitializeComponent();
