@@ -13,10 +13,21 @@ namespace EngLearningApp
             string htmlPath_End = @"&fromlang=eng&tolang=hun&outLanguage=hun";
             string fullPath = htmlPath_Front + eng + htmlPath_End;
 
-            HtmlDocument doc = new HtmlWeb().Load(fullPath);
+            string xpath = "//*[@id='searchresults']/div[2]/div/div/div[2]/ol/li/div[2]/ol[1]/li/div/a";
 
-            var itemList = doc.DocumentNode.SelectNodes("//*[@id='searchresults']/div[2]/div/div/div[2]/ol/li/div[2]/ol[1]/li/div/a").Select(p => p.InnerText).ToList();
-            string hun = itemList.FirstOrDefault().ToString();
+            string hun="";
+            try
+            {
+                HtmlDocument doc = new HtmlWeb().Load(fullPath);
+
+                var itemList = doc.DocumentNode.SelectNodes(xpath).Select(p => p.InnerText).ToList();
+                hun = itemList.FirstOrDefault().ToString();
+            }
+            catch (System.Exception)
+            {
+                //TODO: write exception somewhere
+            }
+            
 
             return hun;
         }
