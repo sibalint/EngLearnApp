@@ -22,5 +22,13 @@ namespace EngLearningApp
             return resultList;
             
         }
+
+        public static List<string> oneLenghtItems(List<string> list)
+        {
+            list.RemoveAll(x => x.Length <= 1);
+
+            return list;
+
+        }
     }
 }

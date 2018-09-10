@@ -14,6 +14,7 @@ namespace EngLearningApp
             List<string> wordListWhitoutDuplicateWords= removeDuplicateWordsFromList(wordList);
 
             var result= RemoveFromList.affix(wordListWhitoutDuplicateWords);
+            result = RemoveFromList.oneLenghtItems(result);
 
             return result;
         }

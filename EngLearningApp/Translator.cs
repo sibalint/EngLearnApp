@@ -1,4 +1,6 @@
-﻿using HtmlAgilityPack;
+﻿using EngLearningApp.model;
+using HtmlAgilityPack;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace EngLearningApp
@@ -17,6 +19,23 @@ namespace EngLearningApp
             string hun = itemList.FirstOrDefault().ToString();
 
             return hun;
+        }
+
+        public List<Word> getDirectory(List<string> engWords)
+        {
+            List<Word> directory = new List<Word>();
+            Word tempWord=new Word();
+            tempWord.knowledgeLevel = KnownColor.Red;
+
+            foreach (var engWord in engWords)
+            {
+                tempWord.english = engWord;
+                tempWord.hungarian = EngToHun(engWord);
+
+                directory.Add(tempWord);
+            }
+
+            return directory;
         }
     }
 }
