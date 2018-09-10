@@ -41,7 +41,8 @@ namespace EngLearningApp
             foreach (var engWord in engWords)
             {
                 tempWord.english = engWord;
-                tempWord.hungarian = EngToHun(engWord);
+#warning
+                //tempWord.hungarian = EngToHun(engWord); 
 
                 directory.Add(tempWord);
             }
