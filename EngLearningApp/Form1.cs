@@ -2,6 +2,7 @@
 using EngLearningApp.model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace EngLearningApp
@@ -9,17 +10,25 @@ namespace EngLearningApp
     public partial class Form1 : Form
     {
         private string filePath { get; set; }
+        private List<string> wordsFromFile = new List<string>();
         private List<Word> wordDirectory = new List<Word>();
 
-        private List<string> greenList = new List<string>();
-        private List<string> yellowList = new List<string>();
-        private List<string> redList = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
             //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
             filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
             tbSelectTextFilePath.Text = filePath;
+
+            #region read word directory
+            Database db = new Database();
+            db.init();            
+            wordDirectory = db.selectWords();
+            db.close();
+            #endregion
+
+
         }
                 
         #region FileReading
@@ -32,29 +41,29 @@ namespace EngLearningApp
             }
         }
 
-        private void tbReadTextFile_Click(object sender, EventArgs e)
+        private void btReadTextFile_Click(object sender, EventArgs e)
         {
             FileReader fileReader = new FileReader();
             TextFormatter textFormatter = new TextFormatter();
 
             string fullText = fileReader.readTxtToString(filePath);
-            List<string> wordSet = textFormatter.getWorldListFromString(fullText);
+            wordsFromFile = textFormatter.getWorldListFromString(fullText);
 
-            Translator d = new Translator();
-            wordDirectory = d.getDirectory(wordSet);
+#warning fix it
+            var databaseListEng = new List<string>(wordDirectory.Select(x => x.english));
+            wordsFromFile = wordsFromFile.Except(databaseListEng).ToList();
+
+            //Translator d = new Translator();
+            //wordDirectory = d.getDirectory(wordSet);
 
             panelFileReader.Visible = false;
+
         }
         #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
-            db.init();
-            //db.runSQL("create table Words(eng varchar(25) PRIMARY KEY, hun varchar(25), color varchar(6))");
-            db.insertWord("the", "az", "green");
-            db.selectWords();
-            db.close();
+            
         }
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)

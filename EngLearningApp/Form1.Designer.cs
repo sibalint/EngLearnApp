@@ -38,23 +38,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbWordsCount = new System.Windows.Forms.Label();
             this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.btRed = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.btYellow = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btGreen = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbEnglishWord = new System.Windows.Forms.Label();
             this.panelFileReader.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.btRed.SuspendLayout();
+            this.btYellow.SuspendLayout();
+            this.btGreen.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(659, 196);
+            this.button1.Location = new System.Drawing.Point(646, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -100,11 +100,12 @@
             this.tbReadTextFile.TabIndex = 4;
             this.tbReadTextFile.Text = "Beolvasás";
             this.tbReadTextFile.UseVisualStyleBackColor = true;
-            this.tbReadTextFile.Click += new System.EventHandler(this.tbReadTextFile_Click);
+            this.tbReadTextFile.Click += new System.EventHandler(this.btReadTextFile_Click);
             // 
             // panelFileReader
             // 
             this.panelFileReader.Controls.Add(this.label1);
+            this.panelFileReader.Controls.Add(this.button1);
             this.panelFileReader.Controls.Add(this.tbReadTextFile);
             this.panelFileReader.Controls.Add(this.tbSelectTextFilePath);
             this.panelFileReader.Controls.Add(this.btSelectTextFilePath);
@@ -117,9 +118,9 @@
             // 
             this.panel1.Controls.Add(this.lbWordsCount);
             this.panel1.Controls.Add(this.btSaveWordsToDatabase);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btRed);
+            this.panel1.Controls.Add(this.btYellow);
+            this.panel1.Controls.Add(this.btGreen);
             this.panel1.Controls.Add(this.lbEnglishWord);
             this.panel1.Location = new System.Drawing.Point(6, 50);
             this.panel1.Name = "panel1";
@@ -146,14 +147,14 @@
             this.btSaveWordsToDatabase.UseVisualStyleBackColor = true;
             this.btSaveWordsToDatabase.Click += new System.EventHandler(this.btSaveWordsToDatabase_Click);
             // 
-            // panel4
+            // btRed
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(425, 116);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(97, 35);
-            this.panel4.TabIndex = 2;
+            this.btRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btRed.Controls.Add(this.label4);
+            this.btRed.Location = new System.Drawing.Point(425, 116);
+            this.btRed.Name = "btRed";
+            this.btRed.Size = new System.Drawing.Size(97, 35);
+            this.btRed.TabIndex = 2;
             // 
             // label4
             // 
@@ -164,14 +165,14 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Új szó";
             // 
-            // panel3
+            // btYellow
             // 
-            this.panel3.BackColor = System.Drawing.Color.Yellow;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(322, 116);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(97, 35);
-            this.panel3.TabIndex = 2;
+            this.btYellow.BackColor = System.Drawing.Color.Yellow;
+            this.btYellow.Controls.Add(this.label3);
+            this.btYellow.Location = new System.Drawing.Point(322, 116);
+            this.btYellow.Name = "btYellow";
+            this.btYellow.Size = new System.Drawing.Size(97, 35);
+            this.btYellow.TabIndex = 2;
             // 
             // label3
             // 
@@ -182,14 +183,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Gyakoroljuk";
             // 
-            // panel2
+            // btGreen
             // 
-            this.panel2.BackColor = System.Drawing.Color.Lime;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(219, 116);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(97, 35);
-            this.panel2.TabIndex = 1;
+            this.btGreen.BackColor = System.Drawing.Color.Lime;
+            this.btGreen.Controls.Add(this.label2);
+            this.btGreen.Location = new System.Drawing.Point(219, 116);
+            this.btGreen.Name = "btGreen";
+            this.btGreen.Size = new System.Drawing.Size(97, 35);
+            this.btGreen.TabIndex = 1;
             // 
             // label2
             // 
@@ -215,9 +216,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelFileReader);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Tag = "git";
             this.Text = "English Word App";
@@ -225,12 +225,12 @@
             this.panelFileReader.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.btRed.ResumeLayout(false);
+            this.btRed.PerformLayout();
+            this.btYellow.ResumeLayout(false);
+            this.btYellow.PerformLayout();
+            this.btGreen.ResumeLayout(false);
+            this.btGreen.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -245,11 +245,11 @@
         private System.Windows.Forms.Button tbReadTextFile;
         private System.Windows.Forms.Panel panelFileReader;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel btRed;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel btYellow;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel btGreen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbEnglishWord;
         private System.Windows.Forms.Label lbWordsCount;

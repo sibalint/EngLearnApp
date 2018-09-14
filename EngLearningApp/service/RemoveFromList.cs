@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EngLearningApp.model;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EngLearningApp
 {
@@ -30,5 +32,12 @@ namespace EngLearningApp
             return list;
 
         }
+
+        //public static List<string> savedData(List<string> fileList, List<Word> databaseList)
+        //{
+        //    List<string> databaseListEng = new List<string>(databaseList.Select(x => x.english));
+        //    var result = fileList.Except(databaseListEng).ToList();
+        //    return result;
+        //}
     }
 }
