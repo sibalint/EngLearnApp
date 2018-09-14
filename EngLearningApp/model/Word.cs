@@ -13,5 +13,24 @@
         public string hungarian;
 
         public KnownColor knowledgeLevel;
+
+        public Word()
+        {
+
+        }
+
+        public Word(string eng, string hun)
+        {
+            this.english = eng;
+            this.hungarian = hun;
+            this.knowledgeLevel = KnownColor.Red;
+        }
+
+        public Word(string eng, string hun,KnownColor color)
+        {
+            this.english = eng;
+            this.hungarian = hun;
+            this.knowledgeLevel = color;
+        }
     }
 }

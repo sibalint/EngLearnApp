@@ -1,4 +1,6 @@
-﻿using System.Data.SQLite;
+﻿using EngLearningApp.model;
+using System.Collections.Generic;
+using System.Data.SQLite;
 
 namespace EngLearningApp.DAO
 {
@@ -37,20 +39,35 @@ namespace EngLearningApp.DAO
             command.ExecuteNonQuery();
         }
 
-        public void selectWords()
+        public List<Word> selectWords()
         {
+            List<Word> words = new List<Word>();
             
-            string sql = "select * from Words";
+            
+            string sql = "SELECT * FROM Words";
             var command = new SQLiteCommand(sql, dbConnection);
-            SQLiteDataReader r = command.ExecuteReader();
+            SQLiteDataReader reader = command.ExecuteReader();
             
 
-            while (r.Read())
+            while (reader.Read())
             {
-                string FileNames = (string)r["eng"];
+                string eng = (string)reader["eng"];
+                string hun = (string)reader["hun"];
+                string color = (string)reader["color"];
 
-                
+                KnownColor colorEnum;
+
+                if (color.Equals("green"))
+                    colorEnum = KnownColor.Green;
+                else if(color.Equals("yellow"))
+                    colorEnum = KnownColor.Yellow;
+                else
+                    colorEnum = KnownColor.Red;
+
+                words.Add(new Word(eng, hun, colorEnum));                
             }
+
+            return words;
         }
 
     }
