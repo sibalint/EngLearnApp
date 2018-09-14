@@ -50,9 +50,16 @@ namespace EngLearningApp
         private void button1_Click(object sender, EventArgs e)
         {
             Database db = new Database();
+            db.init();
             //db.runSQL("create table Words(eng varchar(25) PRIMARY KEY, hun varchar(25), color varchar(6))");
             db.insertWord("the", "az", "green");
             db.selectWords();
+            db.close();
+        }
+
+        private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

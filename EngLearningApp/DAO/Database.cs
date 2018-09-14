@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SQLite;
-using EngLearningApp.model;
+﻿using System.Data.SQLite;
 
 namespace EngLearningApp.DAO
 {
@@ -14,8 +9,18 @@ namespace EngLearningApp.DAO
 
         public Database()
         {
+            
+        }
+
+        public void init()
+        {
             dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
             dbConnection.Open();
+        }
+
+        public void close()
+        {
+            dbConnection.Close();
         }
 
 
