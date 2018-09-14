@@ -35,7 +35,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbReadTextFile = new System.Windows.Forms.Button();
             this.panelFileReader = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelQuestioner = new System.Windows.Forms.Panel();
             this.lbWordsCount = new System.Windows.Forms.Label();
             this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
             this.btRed = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbEnglishWord = new System.Windows.Forms.Label();
             this.panelFileReader.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelQuestioner.SuspendLayout();
             this.btRed.SuspendLayout();
             this.btYellow.SuspendLayout();
             this.btGreen.SuspendLayout();
@@ -60,7 +60,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btStartQuestioner_Click);
             // 
             // label1
             // 
@@ -114,19 +114,19 @@
             this.panelFileReader.Size = new System.Drawing.Size(794, 100);
             this.panelFileReader.TabIndex = 5;
             // 
-            // panel1
+            // panelQuestioner
             // 
-            this.panel1.Controls.Add(this.lbWordsCount);
-            this.panel1.Controls.Add(this.btSaveWordsToDatabase);
-            this.panel1.Controls.Add(this.btRed);
-            this.panel1.Controls.Add(this.btYellow);
-            this.panel1.Controls.Add(this.btGreen);
-            this.panel1.Controls.Add(this.lbEnglishWord);
-            this.panel1.Location = new System.Drawing.Point(6, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 334);
-            this.panel1.TabIndex = 6;
-            this.panel1.Visible = false;
+            this.panelQuestioner.Controls.Add(this.lbWordsCount);
+            this.panelQuestioner.Controls.Add(this.btSaveWordsToDatabase);
+            this.panelQuestioner.Controls.Add(this.btRed);
+            this.panelQuestioner.Controls.Add(this.btYellow);
+            this.panelQuestioner.Controls.Add(this.btGreen);
+            this.panelQuestioner.Controls.Add(this.lbEnglishWord);
+            this.panelQuestioner.Location = new System.Drawing.Point(6, 50);
+            this.panelQuestioner.Name = "panelQuestioner";
+            this.panelQuestioner.Size = new System.Drawing.Size(788, 334);
+            this.panelQuestioner.TabIndex = 6;
+            this.panelQuestioner.Visible = false;
             // 
             // lbWordsCount
             // 
@@ -155,6 +155,7 @@
             this.btRed.Name = "btRed";
             this.btRed.Size = new System.Drawing.Size(97, 35);
             this.btRed.TabIndex = 2;
+            this.btRed.Click += new System.EventHandler(this.btRed_Click);
             // 
             // label4
             // 
@@ -173,6 +174,7 @@
             this.btYellow.Name = "btYellow";
             this.btYellow.Size = new System.Drawing.Size(97, 35);
             this.btYellow.TabIndex = 2;
+            this.btYellow.Click += new System.EventHandler(this.btYellow_Click);
             // 
             // label3
             // 
@@ -191,6 +193,7 @@
             this.btGreen.Name = "btGreen";
             this.btGreen.Size = new System.Drawing.Size(97, 35);
             this.btGreen.TabIndex = 1;
+            this.btGreen.Click += new System.EventHandler(this.btGreen_Click);
             // 
             // label2
             // 
@@ -217,14 +220,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelFileReader);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelQuestioner);
             this.Name = "Form1";
             this.Tag = "git";
             this.Text = "English Word App";
             this.panelFileReader.ResumeLayout(false);
             this.panelFileReader.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelQuestioner.ResumeLayout(false);
+            this.panelQuestioner.PerformLayout();
             this.btRed.ResumeLayout(false);
             this.btRed.PerformLayout();
             this.btYellow.ResumeLayout(false);
@@ -244,7 +247,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button tbReadTextFile;
         private System.Windows.Forms.Panel panelFileReader;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelQuestioner;
         private System.Windows.Forms.Panel btRed;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel btYellow;

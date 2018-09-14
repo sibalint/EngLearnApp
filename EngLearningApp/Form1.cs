@@ -56,14 +56,41 @@ namespace EngLearningApp
             //Translator d = new Translator();
             //wordDirectory = d.getDirectory(wordSet);
 
-            panelFileReader.Visible = false;
+            
 
+        }
+
+        private void btStartQuestioner_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+            panelFileReader.Visible = false;
+            panelQuestioner.Visible = true;
         }
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+
+        #region questioner panel
+
+        #endregion
+        private void btGreen_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btYellow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btRed_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
