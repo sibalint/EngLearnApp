@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace EngLearningApp
 {
@@ -73,20 +74,20 @@ namespace EngLearningApp
 
         private void btGreen_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(KnownColor.Green);
+            questioner.addWordToNewWordsList(model.KnownColor.Green);
             questioner.questionTheNextWord(wordsFromFile);
         }
 
 
         private void btYellow_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(KnownColor.Yellow);
+            questioner.addWordToNewWordsList(model.KnownColor.Yellow);
             questioner.questionTheNextWord(wordsFromFile);
         }
 
         private void btRed_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(KnownColor.Red);
+            questioner.addWordToNewWordsList(model.KnownColor.Red);
             questioner.questionTheNextWord(wordsFromFile);
         }
 
@@ -121,5 +122,37 @@ namespace EngLearningApp
         {
             Application.Exit();
         }
+
+
+        #region Windows position whitout border
+        private bool mouseDown;
+        private Point lastLocation;
+
+        private void pTopPane_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void pTopPane_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void pTopPane_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+
+        #endregion
+
+        
     }
 }
