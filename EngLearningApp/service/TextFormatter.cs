@@ -9,14 +9,9 @@ namespace EngLearningApp
         {
             text = preFormattingBeforeLisiting(text);
 
-            List<string> wordList = strToListAlongWhiteSpaces(text);
+            List<string> wordList = strToListAlongWhiteSpaces(text); //create list
 
-            List<string> wordListWhitoutDuplicateWords= RemoveFromList.duplicateWords(wordList);
-
-            var result= RemoveFromList.affix(wordListWhitoutDuplicateWords);
-            result = RemoveFromList.oneLenghtItems(result);
-
-            return result;
+            return RemoveFromList.unnessesarryItems(wordList);          
         }
 
 
