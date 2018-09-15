@@ -19,18 +19,17 @@ namespace EngLearningApp
         public Form1()
         {
             InitializeComponent();
+
+            #region Test file path
             //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
             filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
             tbSelectTextFilePath.Text = filePath;
+            #endregion
 
             questioner = new Questioner(lbWordsCount, lbEnglishWord);
 
-            #region read word directory
-            Database db = new Database();
-            db.init();            
-            wordsFromDatabase = db.selectWords();
-            db.close();
-            #endregion
+            wordsFromDatabase = new Database().initializeInMemoryList();
+            
 
 
         }
@@ -93,18 +92,7 @@ namespace EngLearningApp
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
         {
-            #region write word directory
-            Database db = new Database();
-            db.init();
-            var newWords = questioner.getNewWords();
-            foreach (var word in newWords)
-            {
-                db.insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
-            }
-
-
-            db.close();
-            #endregion
+            new Database().saveData(questioner.getNewWords());            
         }
 
         #endregion

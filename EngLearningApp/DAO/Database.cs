@@ -14,25 +14,43 @@ namespace EngLearningApp.DAO
             
         }
 
-        public void init()
+        public List<Word> initializeInMemoryList()
+        {
+            init();
+            var result = getWords();
+            close();
+            return result;
+        }
+
+        public void saveData(List<Word> newWords)
+        {
+            init();
+            foreach (var word in newWords)
+            {
+                insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
+            }
+            close();
+        }
+
+
+        private void init()
         {
             dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
             dbConnection.Open();
         }
 
-        public void close()
+        private void close()
         {
             dbConnection.Close();
         }
 
-
-        public void runSQL(string sql)
+        private void runSQL(string sql)
         {
             command = new SQLiteCommand(sql, dbConnection);
             command.ExecuteNonQuery();
         }
 
-        public void insertWord(string eng, string hun, string knowledgeColor)
+        private void insertWord(string eng, string hun, string knowledgeColor)
         {
             command = new SQLiteCommand(dbConnection);
             command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
@@ -42,7 +60,7 @@ namespace EngLearningApp.DAO
             command.ExecuteNonQuery();
         }
 
-        public List<Word> selectWords()
+        public List<Word> getWords()
         {
             List<Word> words = new List<Word>();
             
