@@ -8,6 +8,14 @@ namespace EngLearningApp
     {
         private static List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "'s", "'ll", "n't", "'t", "'ve", "'re", "ly" }); //affixes=ragok
 
+        public static List<string> duplicateWords(List<string> words)
+        {
+            HashSet<string> set = new HashSet<string>(words);
+            var list = set.ToList();
+            var ascendingOrder = list.OrderBy(i => i).ToList();
+            return ascendingOrder;
+        }
+
         public static List<string> affix(List<string> wordList) 
         {
             wordList.Remove("");

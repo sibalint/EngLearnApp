@@ -11,7 +11,7 @@ namespace EngLearningApp
 
             List<string> wordList = strToListAlongWhiteSpaces(text);
 
-            List<string> wordListWhitoutDuplicateWords= removeDuplicateWordsFromList(wordList);
+            List<string> wordListWhitoutDuplicateWords= RemoveFromList.duplicateWords(wordList);
 
             var result= RemoveFromList.affix(wordListWhitoutDuplicateWords);
             result = RemoveFromList.oneLenghtItems(result);
@@ -36,14 +36,7 @@ namespace EngLearningApp
             return text.Split(' ').ToList();
         }
 
-        private List<string> removeDuplicateWordsFromList(List<string> words)
-        {
-            HashSet<string> set = new HashSet<string>(words);
-            var list = set.ToList();
-            var ascendingOrder = list.OrderBy(i => i).ToList();
-            return ascendingOrder;
-
-        }
+        
 
 
 
