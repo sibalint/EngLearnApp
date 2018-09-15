@@ -24,7 +24,7 @@ namespace EngLearningApp
             #region Test file path
             //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
             filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
-            tbSelectTextFilePath.Text = filePath;
+            
             #endregion
 
             questioner = new Questioner(lbWordsCount, lbEnglishWord);
@@ -38,25 +38,13 @@ namespace EngLearningApp
         #region FileReading
         private void btSelectTextFilePath_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                this.filePath = openFileDialog1.FileName;
-                tbSelectTextFilePath.Text = filePath;
-            }
+            
         }
 
         private void btReadTextFile_Click(object sender, EventArgs e)
         {
-            FileReader fileReader = new FileReader();
-            TextFormatter textFormatter = new TextFormatter();
-
-            string fullText = fileReader.readTxtToString(filePath);
-            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
-
-            //Translator d = new Translator();
-            //wordDirectory = d.getDirectory(wordSet);
-
             
+
 
         }
 
@@ -101,8 +89,25 @@ namespace EngLearningApp
 
         private void btl_open_Click(object sender, EventArgs e)
         {
-            panelFileReader.Visible = true;
-            panelQuestioner.Visible = false;
+            
+            #region File chooser
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                this.filePath = openFileDialog1.FileName;
+            }
+            #endregion
+
+            #region Read file to list
+            FileReader fileReader = new FileReader();
+            TextFormatter textFormatter = new TextFormatter();
+
+            string fullText = fileReader.readTxtToString(filePath);
+            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
+
+            //Translator d = new Translator();
+            //wordDirectory = d.getDirectory(wordSet);
+            #endregion
+
         }
 
         private void btl_NewWords_Click(object sender, EventArgs e)

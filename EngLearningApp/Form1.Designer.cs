@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbSelectTextFilePath = new System.Windows.Forms.TextBox();
-            this.btSelectTextFilePath = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btReadTextFile = new System.Windows.Forms.Button();
             this.panelFileReader = new System.Windows.Forms.Panel();
             this.panelQuestioner = new System.Windows.Forms.Panel();
             this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
@@ -52,59 +48,17 @@
             this.pTopPanel = new System.Windows.Forms.Panel();
             this.btt_Minimalize = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
-            this.panelFileReader.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
             this.pTopPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Fájl helye:";
-            // 
-            // tbSelectTextFilePath
-            // 
-            this.tbSelectTextFilePath.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbSelectTextFilePath.Location = new System.Drawing.Point(50, 79);
-            this.tbSelectTextFilePath.Name = "tbSelectTextFilePath";
-            this.tbSelectTextFilePath.Size = new System.Drawing.Size(570, 22);
-            this.tbSelectTextFilePath.TabIndex = 2;
-            // 
-            // btSelectTextFilePath
-            // 
-            this.btSelectTextFilePath.Location = new System.Drawing.Point(435, 112);
-            this.btSelectTextFilePath.Name = "btSelectTextFilePath";
-            this.btSelectTextFilePath.Size = new System.Drawing.Size(87, 29);
-            this.btSelectTextFilePath.TabIndex = 3;
-            this.btSelectTextFilePath.Text = "Tallózás";
-            this.btSelectTextFilePath.UseVisualStyleBackColor = true;
-            this.btSelectTextFilePath.Click += new System.EventHandler(this.btSelectTextFilePath_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btReadTextFile
-            // 
-            this.btReadTextFile.Location = new System.Drawing.Point(528, 112);
-            this.btReadTextFile.Name = "btReadTextFile";
-            this.btReadTextFile.Size = new System.Drawing.Size(87, 29);
-            this.btReadTextFile.TabIndex = 4;
-            this.btReadTextFile.Text = "Beolvasás";
-            this.btReadTextFile.UseVisualStyleBackColor = true;
-            this.btReadTextFile.Click += new System.EventHandler(this.btReadTextFile_Click);
-            // 
             // panelFileReader
             // 
-            this.panelFileReader.Controls.Add(this.label1);
-            this.panelFileReader.Controls.Add(this.btReadTextFile);
-            this.panelFileReader.Controls.Add(this.tbSelectTextFilePath);
-            this.panelFileReader.Controls.Add(this.btSelectTextFilePath);
             this.panelFileReader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFileReader.Location = new System.Drawing.Point(188, 34);
             this.panelFileReader.Name = "panelFileReader";
@@ -363,8 +317,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.panelFileReader);
+            this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
             this.Controls.Add(this.pTopPanel);
@@ -375,8 +329,6 @@
             this.Name = "Form1";
             this.Tag = "git";
             this.Text = "English Word App";
-            this.panelFileReader.ResumeLayout(false);
-            this.panelFileReader.PerformLayout();
             this.panelQuestioner.ResumeLayout(false);
             this.panelQuestioner.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
@@ -386,11 +338,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbSelectTextFilePath;
-        private System.Windows.Forms.Button btSelectTextFilePath;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btReadTextFile;
         private System.Windows.Forms.Panel panelFileReader;
         private System.Windows.Forms.Panel panelQuestioner;
         private System.Windows.Forms.Label lbEnglishWord;
