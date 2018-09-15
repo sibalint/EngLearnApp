@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panelFileReader = new System.Windows.Forms.Panel();
+            this.panelShowUnKnownList = new System.Windows.Forms.Panel();
+            this.rtb_ShowWords = new System.Windows.Forms.RichTextBox();
             this.panelQuestioner = new System.Windows.Forms.Panel();
             this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,15 +40,16 @@
             this.lbWordsCount = new System.Windows.Forms.Label();
             this.lbEnglishWord = new System.Windows.Forms.Label();
             this.pLeftButtonPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btl_NewWords = new System.Windows.Forms.Button();
             this.btl_Settings = new System.Windows.Forms.Button();
             this.btl_OldWords = new System.Windows.Forms.Button();
-            this.btl_NewWords = new System.Windows.Forms.Button();
+            this.btl_Questioner = new System.Windows.Forms.Button();
             this.btl_open = new System.Windows.Forms.Button();
             this.pLogPanel = new System.Windows.Forms.Panel();
             this.pTopPanel = new System.Windows.Forms.Panel();
             this.btt_Minimalize = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
+            this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
             this.pTopPanel.SuspendLayout();
@@ -55,15 +57,27 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileName = "Select a text file";
             // 
-            // panelFileReader
+            // panelShowUnKnownList
             // 
-            this.panelFileReader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFileReader.Location = new System.Drawing.Point(188, 34);
-            this.panelFileReader.Name = "panelFileReader";
-            this.panelFileReader.Size = new System.Drawing.Size(667, 382);
-            this.panelFileReader.TabIndex = 5;
+            this.panelShowUnKnownList.Controls.Add(this.rtb_ShowWords);
+            this.panelShowUnKnownList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelShowUnKnownList.Location = new System.Drawing.Point(188, 34);
+            this.panelShowUnKnownList.Name = "panelShowUnKnownList";
+            this.panelShowUnKnownList.Size = new System.Drawing.Size(667, 382);
+            this.panelShowUnKnownList.TabIndex = 5;
+            // 
+            // rtb_ShowWords
+            // 
+            this.rtb_ShowWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.rtb_ShowWords.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_ShowWords.ForeColor = System.Drawing.Color.White;
+            this.rtb_ShowWords.Location = new System.Drawing.Point(10, 7);
+            this.rtb_ShowWords.Name = "rtb_ShowWords";
+            this.rtb_ShowWords.Size = new System.Drawing.Size(598, 369);
+            this.rtb_ShowWords.TabIndex = 0;
+            this.rtb_ShowWords.Text = "";
             // 
             // panelQuestioner
             // 
@@ -166,10 +180,10 @@
             // 
             // pLeftButtonPanel
             // 
-            this.pLeftButtonPanel.Controls.Add(this.button2);
+            this.pLeftButtonPanel.Controls.Add(this.btl_NewWords);
             this.pLeftButtonPanel.Controls.Add(this.btl_Settings);
             this.pLeftButtonPanel.Controls.Add(this.btl_OldWords);
-            this.pLeftButtonPanel.Controls.Add(this.btl_NewWords);
+            this.pLeftButtonPanel.Controls.Add(this.btl_Questioner);
             this.pLeftButtonPanel.Controls.Add(this.btl_open);
             this.pLeftButtonPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.pLeftButtonPanel.Location = new System.Drawing.Point(0, 34);
@@ -177,21 +191,22 @@
             this.pLeftButtonPanel.Size = new System.Drawing.Size(188, 482);
             this.pLeftButtonPanel.TabIndex = 7;
             // 
-            // button2
+            // btl_NewWords
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::EngLearningApp.Properties.Resources._new;
-            this.button2.Location = new System.Drawing.Point(3, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 88);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "New words";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btl_NewWords.FlatAppearance.BorderSize = 0;
+            this.btl_NewWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btl_NewWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btl_NewWords.ForeColor = System.Drawing.Color.White;
+            this.btl_NewWords.Image = global::EngLearningApp.Properties.Resources._new;
+            this.btl_NewWords.Location = new System.Drawing.Point(3, 194);
+            this.btl_NewWords.Name = "btl_NewWords";
+            this.btl_NewWords.Size = new System.Drawing.Size(188, 88);
+            this.btl_NewWords.TabIndex = 4;
+            this.btl_NewWords.Text = "New words";
+            this.btl_NewWords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btl_NewWords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btl_NewWords.UseVisualStyleBackColor = true;
+            this.btl_NewWords.Click += new System.EventHandler(this.btl_NewWords_Click);
             // 
             // btl_Settings
             // 
@@ -225,22 +240,22 @@
             this.btl_OldWords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_OldWords.UseVisualStyleBackColor = true;
             // 
-            // btl_NewWords
+            // btl_Questioner
             // 
-            this.btl_NewWords.FlatAppearance.BorderSize = 0;
-            this.btl_NewWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btl_NewWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btl_NewWords.ForeColor = System.Drawing.Color.White;
-            this.btl_NewWords.Image = global::EngLearningApp.Properties.Resources.questioner;
-            this.btl_NewWords.Location = new System.Drawing.Point(3, 100);
-            this.btl_NewWords.Name = "btl_NewWords";
-            this.btl_NewWords.Size = new System.Drawing.Size(188, 88);
-            this.btl_NewWords.TabIndex = 1;
-            this.btl_NewWords.Text = "Question words";
-            this.btl_NewWords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btl_NewWords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btl_NewWords.UseVisualStyleBackColor = true;
-            this.btl_NewWords.Click += new System.EventHandler(this.btl_NewWords_Click);
+            this.btl_Questioner.FlatAppearance.BorderSize = 0;
+            this.btl_Questioner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btl_Questioner.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btl_Questioner.ForeColor = System.Drawing.Color.White;
+            this.btl_Questioner.Image = global::EngLearningApp.Properties.Resources.questioner;
+            this.btl_Questioner.Location = new System.Drawing.Point(3, 100);
+            this.btl_Questioner.Name = "btl_Questioner";
+            this.btl_Questioner.Size = new System.Drawing.Size(188, 88);
+            this.btl_Questioner.TabIndex = 1;
+            this.btl_Questioner.Text = "Question words";
+            this.btl_Questioner.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btl_Questioner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btl_Questioner.UseVisualStyleBackColor = true;
+            this.btl_Questioner.Click += new System.EventHandler(this.btl_Questioner_Click);
             // 
             // btl_open
             // 
@@ -317,7 +332,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelFileReader);
+            this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
@@ -329,6 +344,7 @@
             this.Name = "Form1";
             this.Tag = "git";
             this.Text = "English Word App";
+            this.panelShowUnKnownList.ResumeLayout(false);
             this.panelQuestioner.ResumeLayout(false);
             this.panelQuestioner.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
@@ -339,7 +355,7 @@
 
         #endregion
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panelFileReader;
+        private System.Windows.Forms.Panel panelShowUnKnownList;
         private System.Windows.Forms.Panel panelQuestioner;
         private System.Windows.Forms.Label lbEnglishWord;
         private System.Windows.Forms.Label lbWordsCount;
@@ -349,14 +365,15 @@
         private System.Windows.Forms.Panel pTopPanel;
         private System.Windows.Forms.Button btl_Settings;
         private System.Windows.Forms.Button btl_OldWords;
+        private System.Windows.Forms.Button btl_Questioner;
         private System.Windows.Forms.Button btl_NewWords;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btSaveWordsToDatabase;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btt_close;
         private System.Windows.Forms.Button btt_Minimalize;
+        private System.Windows.Forms.RichTextBox rtb_ShowWords;
     }
 }
 

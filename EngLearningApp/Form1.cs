@@ -15,7 +15,7 @@ namespace EngLearningApp
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordsFromDatabase = new List<Word>();
         private Questioner questioner;
-        
+
 
         public Form1()
         {
@@ -24,26 +24,26 @@ namespace EngLearningApp
             #region Test file path
             //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
             filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
-            
+
             #endregion
 
             questioner = new Questioner(lbWordsCount, lbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
-            
+
 
 
         }
-                
+
         #region FileReading
         private void btSelectTextFilePath_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btReadTextFile_Click(object sender, EventArgs e)
         {
-            
+
 
 
         }
@@ -52,7 +52,7 @@ namespace EngLearningApp
         {
             questioner.questionTheNextWord(wordsFromFile);
 
-            panelFileReader.Visible = false;
+            panelShowUnKnownList.Visible = false;
             panelQuestioner.Visible = true;
         }
         #endregion
@@ -87,37 +87,7 @@ namespace EngLearningApp
 
         #endregion
 
-        private void btl_open_Click(object sender, EventArgs e)
-        {
-            
-            #region File chooser
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                this.filePath = openFileDialog1.FileName;
-            }
-            #endregion
-
-            #region Read file to list
-            FileReader fileReader = new FileReader();
-            TextFormatter textFormatter = new TextFormatter();
-
-            string fullText = fileReader.readTxtToString(filePath);
-            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
-
-            //Translator d = new Translator();
-            //wordDirectory = d.getDirectory(wordSet);
-            #endregion
-
-        }
-
-        private void btl_NewWords_Click(object sender, EventArgs e)
-        {
-            questioner.questionTheNextWord(wordsFromFile);
-
-            panelFileReader.Visible = false;
-            panelQuestioner.Visible = true;
-        }
-
+        #region Top panel
         private void btt_Minimalize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -156,8 +126,52 @@ namespace EngLearningApp
         }
 
 
+
         #endregion
 
-        
+        #endregion
+
+        private void btl_open_Click(object sender, EventArgs e)
+        {
+
+            #region File chooser
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                this.filePath = openFileDialog1.FileName;
+            }
+            #endregion
+
+            #region Read file to list
+            FileReader fileReader = new FileReader();
+            TextFormatter textFormatter = new TextFormatter();
+
+            string fullText = fileReader.readTxtToString(filePath);
+            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
+
+            //Translator d = new Translator();
+            //wordDirectory = d.getDirectory(wordSet);
+            #endregion
+
+        }
+
+        private void btl_Questioner_Click(object sender, EventArgs e)
+        {
+            questioner.questionTheNextWord(wordsFromFile);
+
+            panelShowUnKnownList.Visible = false;
+            panelQuestioner.Visible = true;
+        }
+
+
+
+        private void btl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btl_NewWords_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
