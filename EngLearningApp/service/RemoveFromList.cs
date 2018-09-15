@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace EngLearningApp
 {
-    public static class RemoveFromList
+    public class RemoveFromList
     {
-        private static List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "'s", "'ll", "n't", "'t", "'ve", "'re", "ly" }); //affixes=ragok
+        private List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "'s", "'ll", "n't", "'t", "'ve", "'re", "ly" }); //affixes=ragok
 
-        public static List<string> unnessesarryItems(List<string> list)
+        public List<string> unnessesarryItems(List<string> list)
         {
             list = duplicateWords(list);
             list = affix(list);
@@ -17,7 +17,7 @@ namespace EngLearningApp
             return list;
         }
 
-        private static List<string> duplicateWords(List<string> words)
+        private List<string> duplicateWords(List<string> words)
         {
             HashSet<string> set = new HashSet<string>(words);
             var list = set.ToList();
@@ -25,7 +25,7 @@ namespace EngLearningApp
             return ascendingOrder;
         }
 
-        private static List<string> affix(List<string> wordList) 
+        private List<string> affix(List<string> wordList) 
         {
             wordList.Remove("");
 
@@ -55,7 +55,7 @@ namespace EngLearningApp
             
         }
 
-        private static List<string> oneLenghtItems(List<string> list)
+        private List<string> oneLenghtItems(List<string> list)
         {
             list.RemoveAll(x => x.Length <= 1);
 

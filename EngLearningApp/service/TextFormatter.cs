@@ -11,7 +11,7 @@ namespace EngLearningApp
 
             List<string> wordList = strToListAlongWhiteSpaces(text); //create list
 
-            return RemoveFromList.unnessesarryItems(wordList);          
+            return (new RemoveFromList()).unnessesarryItems(wordList);          
         }
 
 
