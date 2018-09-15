@@ -12,7 +12,7 @@ namespace EngLearningApp
     {
         private string filePath { get; set; }
         private List<string> wordsFromFile = new List<string>();
-        private List<Word> wordDirectory = new List<Word>();
+        private List<Word> wordsFromDatabase = new List<Word>();
         private List<Word> newWords = new List<Word>();
         private Questioner questioner = new Questioner();
         private string questionedWord;
@@ -27,7 +27,7 @@ namespace EngLearningApp
             #region read word directory
             Database db = new Database();
             db.init();            
-            wordDirectory = db.selectWords();
+            wordsFromDatabase = db.selectWords();
             db.close();
             #endregion
 
@@ -53,7 +53,7 @@ namespace EngLearningApp
             wordsFromFile = textFormatter.getWorldListFromString(fullText);
 
 #warning fix it
-            var databaseListEng = new List<string>(wordDirectory.Select(x => x.english));
+            var databaseListEng = new List<string>(wordsFromDatabase.Select(x => x.english));
             wordsFromFile = wordsFromFile.Except(databaseListEng).ToList();
 
             //Translator d = new Translator();
