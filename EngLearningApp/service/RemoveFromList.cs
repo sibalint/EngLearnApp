@@ -17,8 +17,7 @@ namespace EngLearningApp
         }
 
         public List<string> unnessesarryItems(List<string> list)
-        {
-            list.Remove("");
+        {            
             list.AddRange(wordsFromDatabase_JustEnglishWords);
             list = duplicateWords(list);
             list = affix(list);
@@ -36,8 +35,9 @@ namespace EngLearningApp
             return ascendingOrder;
         }
 
-        private List<string> affix(List<string> list) 
-        { 
+        private List<string> affix(List<string> list)
+        {
+            list.Remove("");
             var resultList = new List<string>(list);
             foreach (var word in list)
             {
@@ -48,6 +48,7 @@ namespace EngLearningApp
                 }
 
                 #region special affix: comE -> comING
+
                 if (word[word.Length - 1] == 'e')
                 {
                     //come -> coming
