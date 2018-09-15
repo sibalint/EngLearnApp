@@ -13,9 +13,8 @@ namespace EngLearningApp
         private string filePath { get; set; }
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordsFromDatabase = new List<Word>();
-        private List<Word> newWords = new List<Word>();
-        private Questioner questioner = new Questioner();
-        private string questionedWord;
+        private Questioner questioner;
+        
 
         public Form1()
         {
@@ -23,6 +22,8 @@ namespace EngLearningApp
             //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
             filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
             tbSelectTextFilePath.Text = filePath;
+
+            questioner = new Questioner(lbWordsCount, lbEnglishWord);
 
             #region read word directory
             Database db = new Database();
@@ -65,36 +66,33 @@ namespace EngLearningApp
 
         private void btStartQuestioner_Click(object sender, EventArgs e)
         {
-            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
+            questioner.questionTheNextWord(wordsFromFile);
 
             panelFileReader.Visible = false;
             panelQuestioner.Visible = true;
         }
         #endregion
 
-
-
-
         #region questioner panel
 
-        #endregion
+
         private void btGreen_Click(object sender, EventArgs e)
         {
-            newWords.Add(new Word(questionedWord, "", KnownColor.Green));
-            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
+            questioner.addWordToNewWordsList(KnownColor.Green);
+            questioner.questionTheNextWord(wordsFromFile);
         }
 
 
         private void btYellow_Click(object sender, EventArgs e)
         {
-            newWords.Add(new Word(questionedWord, "", KnownColor.Yellow));
-            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
+            questioner.addWordToNewWordsList(KnownColor.Yellow);
+            questioner.questionTheNextWord(wordsFromFile);
         }
 
         private void btRed_Click(object sender, EventArgs e)
         {
-            newWords.Add(new Word(questionedWord, "", KnownColor.Red));
-            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
+            questioner.addWordToNewWordsList(KnownColor.Red);
+            questioner.questionTheNextWord(wordsFromFile);
         }
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
@@ -102,7 +100,7 @@ namespace EngLearningApp
             #region write word directory
             Database db = new Database();
             db.init();
-            var x = KnownColor.Red.ToString();
+            var newWords = questioner.getNewWords();
             foreach (var word in newWords)
             {
                 db.insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
@@ -112,5 +110,7 @@ namespace EngLearningApp
             db.close();
             #endregion
         }
+
+        #endregion
     }
 }
