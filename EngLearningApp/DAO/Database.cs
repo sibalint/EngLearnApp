@@ -57,9 +57,9 @@ namespace EngLearningApp.DAO
 
                 KnownColor colorEnum;
 
-                if (color.Equals("green"))
+                if (color.Equals("Green"))
                     colorEnum = KnownColor.Green;
-                else if(color.Equals("yellow"))
+                else if(color.Equals("Yellow"))
                     colorEnum = KnownColor.Yellow;
                 else
                     colorEnum = KnownColor.Red;
