@@ -51,11 +51,7 @@ namespace EngLearningApp
             TextFormatter textFormatter = new TextFormatter();
 
             string fullText = fileReader.readTxtToString(filePath);
-            wordsFromFile = textFormatter.getWorldListFromString(fullText);
-
-#warning fix it
-            var databaseListEng = new List<string>(wordsFromDatabase.Select(x => x.english));
-            wordsFromFile = wordsFromFile.Except(databaseListEng).ToList();
+            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
 
             //Translator d = new Translator();
             //wordDirectory = d.getDirectory(wordSet);

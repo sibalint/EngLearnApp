@@ -6,13 +6,23 @@ namespace EngLearningApp
 {
     public class RemoveFromList
     {
+        private List<Word> wordsFromDatabase;
+        private List<string> wordsFromDatabase_JustEnglishWords;
         private List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "'s", "'ll", "n't", "'t", "'ve", "'re", "ly" }); //affixes=ragok
+
+        public RemoveFromList(List<Word> wordsFromDatabase)
+        {
+            this.wordsFromDatabase = wordsFromDatabase;
+            this.wordsFromDatabase_JustEnglishWords = wordsFromDatabase.Select(x => x.english).ToList();
+        }
 
         public List<string> unnessesarryItems(List<string> list)
         {
+            list.Remove("");
             list = duplicateWords(list);
             list = affix(list);
             list = oneLenghtItems(list);
+            list = savedData(list, wordsFromDatabase);
 
             return list;
         }
@@ -25,12 +35,13 @@ namespace EngLearningApp
             return ascendingOrder;
         }
 
-        private List<string> affix(List<string> wordList) 
+        private List<string> affix(List<string> list) 
         {
-            wordList.Remove("");
 
-            var resultList = new List<string>(wordList);
-            foreach (var word in wordList)
+            list.AddRange(wordsFromDatabase_JustEnglishWords);
+
+            var resultList = new List<string>(list);
+            foreach (var word in list)
             {
                 foreach (var affix in affixes)
                 {
@@ -63,11 +74,11 @@ namespace EngLearningApp
 
         }
 
-        //public static List<string> savedData(List<string> fileList, List<Word> databaseList)
-        //{
-        //    List<string> databaseListEng = new List<string>(databaseList.Select(x => x.english));
-        //    var result = fileList.Except(databaseListEng).ToList();
-        //    return result;
-        //}
+        private List<string> savedData(List<string> wordsFromFile, List<Word> wordsFromDatabase)
+        {
+            List<string> databaseListEng = new List<string>(wordsFromDatabase_JustEnglishWords);
+            var result = wordsFromFile.Except(databaseListEng).ToList();
+            return result;
+        }
     }
 }
