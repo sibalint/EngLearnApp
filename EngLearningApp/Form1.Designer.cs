@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.tbSelectTextFilePath = new System.Windows.Forms.TextBox();
             this.btSelectTextFilePath = new System.Windows.Forms.Button();
@@ -37,38 +37,26 @@
             this.panelFileReader = new System.Windows.Forms.Panel();
             this.panelQuestioner = new System.Windows.Forms.Panel();
             this.lbWordsCount = new System.Windows.Forms.Label();
-            this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
-            this.btRed = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btYellow = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btGreen = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbEnglishWord = new System.Windows.Forms.Label();
             this.pLeftButtonPanel = new System.Windows.Forms.Panel();
             this.pLogPanel = new System.Windows.Forms.Panel();
             this.pTopPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
+            this.btt_Minimalize = new System.Windows.Forms.Button();
+            this.btt_close = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btl_Settings = new System.Windows.Forms.Button();
             this.btl_OldWords = new System.Windows.Forms.Button();
             this.btl_NewWords = new System.Windows.Forms.Button();
             this.btl_open = new System.Windows.Forms.Button();
             this.panelFileReader.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
-            this.btRed.SuspendLayout();
-            this.btYellow.SuspendLayout();
-            this.btGreen.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
+            this.pTopPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(530, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btStartQuestioner_Click);
             // 
             // label1
             // 
@@ -88,7 +76,7 @@
             // 
             // btSelectTextFilePath
             // 
-            this.btSelectTextFilePath.Location = new System.Drawing.Point(344, 112);
+            this.btSelectTextFilePath.Location = new System.Drawing.Point(435, 112);
             this.btSelectTextFilePath.Name = "btSelectTextFilePath";
             this.btSelectTextFilePath.Size = new System.Drawing.Size(87, 29);
             this.btSelectTextFilePath.TabIndex = 3;
@@ -102,7 +90,7 @@
             // 
             // btReadTextFile
             // 
-            this.btReadTextFile.Location = new System.Drawing.Point(437, 112);
+            this.btReadTextFile.Location = new System.Drawing.Point(528, 112);
             this.btReadTextFile.Name = "btReadTextFile";
             this.btReadTextFile.Size = new System.Drawing.Size(87, 29);
             this.btReadTextFile.TabIndex = 4;
@@ -113,7 +101,6 @@
             // panelFileReader
             // 
             this.panelFileReader.Controls.Add(this.label1);
-            this.panelFileReader.Controls.Add(this.button1);
             this.panelFileReader.Controls.Add(this.btReadTextFile);
             this.panelFileReader.Controls.Add(this.tbSelectTextFilePath);
             this.panelFileReader.Controls.Add(this.btSelectTextFilePath);
@@ -125,11 +112,11 @@
             // 
             // panelQuestioner
             // 
-            this.panelQuestioner.Controls.Add(this.lbWordsCount);
             this.panelQuestioner.Controls.Add(this.btSaveWordsToDatabase);
-            this.panelQuestioner.Controls.Add(this.btRed);
-            this.panelQuestioner.Controls.Add(this.btYellow);
-            this.panelQuestioner.Controls.Add(this.btGreen);
+            this.panelQuestioner.Controls.Add(this.button4);
+            this.panelQuestioner.Controls.Add(this.button3);
+            this.panelQuestioner.Controls.Add(this.button1);
+            this.panelQuestioner.Controls.Add(this.lbWordsCount);
             this.panelQuestioner.Controls.Add(this.lbEnglishWord);
             this.panelQuestioner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQuestioner.Location = new System.Drawing.Point(188, 34);
@@ -141,84 +128,17 @@
             // lbWordsCount
             // 
             this.lbWordsCount.AutoSize = true;
-            this.lbWordsCount.Location = new System.Drawing.Point(4, 10);
+            this.lbWordsCount.Location = new System.Drawing.Point(6, 349);
             this.lbWordsCount.Name = "lbWordsCount";
             this.lbWordsCount.Size = new System.Drawing.Size(57, 21);
             this.lbWordsCount.TabIndex = 4;
             this.lbWordsCount.Text = "label5";
             // 
-            // btSaveWordsToDatabase
-            // 
-            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(599, 249);
-            this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
-            this.btSaveWordsToDatabase.Size = new System.Drawing.Size(75, 23);
-            this.btSaveWordsToDatabase.TabIndex = 3;
-            this.btSaveWordsToDatabase.Text = "Mentés";
-            this.btSaveWordsToDatabase.UseVisualStyleBackColor = true;
-            this.btSaveWordsToDatabase.Click += new System.EventHandler(this.btSaveWordsToDatabase_Click);
-            // 
-            // btRed
-            // 
-            this.btRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btRed.Controls.Add(this.label4);
-            this.btRed.Location = new System.Drawing.Point(425, 116);
-            this.btRed.Name = "btRed";
-            this.btRed.Size = new System.Drawing.Size(97, 35);
-            this.btRed.TabIndex = 2;
-            this.btRed.Click += new System.EventHandler(this.btRed_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 21);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Új szó";
-            // 
-            // btYellow
-            // 
-            this.btYellow.BackColor = System.Drawing.Color.Yellow;
-            this.btYellow.Controls.Add(this.label3);
-            this.btYellow.Location = new System.Drawing.Point(322, 116);
-            this.btYellow.Name = "btYellow";
-            this.btYellow.Size = new System.Drawing.Size(97, 35);
-            this.btYellow.TabIndex = 2;
-            this.btYellow.Click += new System.EventHandler(this.btYellow_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Gyakoroljuk";
-            // 
-            // btGreen
-            // 
-            this.btGreen.BackColor = System.Drawing.Color.Lime;
-            this.btGreen.Controls.Add(this.label2);
-            this.btGreen.Location = new System.Drawing.Point(219, 116);
-            this.btGreen.Name = "btGreen";
-            this.btGreen.Size = new System.Drawing.Size(97, 35);
-            this.btGreen.TabIndex = 1;
-            this.btGreen.Click += new System.EventHandler(this.btGreen_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tudom";
-            // 
             // lbEnglishWord
             // 
             this.lbEnglishWord.AutoSize = true;
             this.lbEnglishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbEnglishWord.Location = new System.Drawing.Point(214, 72);
+            this.lbEnglishWord.Location = new System.Drawing.Point(162, 153);
             this.lbEnglishWord.Name = "lbEnglishWord";
             this.lbEnglishWord.Size = new System.Drawing.Size(70, 25);
             this.lbEnglishWord.TabIndex = 0;
@@ -226,6 +146,7 @@
             // 
             // pLeftButtonPanel
             // 
+            this.pLeftButtonPanel.Controls.Add(this.button2);
             this.pLeftButtonPanel.Controls.Add(this.btl_Settings);
             this.pLeftButtonPanel.Controls.Add(this.btl_OldWords);
             this.pLeftButtonPanel.Controls.Add(this.btl_NewWords);
@@ -246,11 +167,127 @@
             // 
             // pTopPanel
             // 
+            this.pTopPanel.Controls.Add(this.btt_Minimalize);
+            this.pTopPanel.Controls.Add(this.btt_close);
             this.pTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.pTopPanel.Location = new System.Drawing.Point(188, 0);
             this.pTopPanel.Name = "pTopPanel";
             this.pTopPanel.Size = new System.Drawing.Size(667, 34);
             this.pTopPanel.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(167, 188);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 46);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Know";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btGreen_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkOrange;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(270, 188);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 46);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Don\'t know Really";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btYellow_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.OrangeRed;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(373, 188);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 46);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "New word";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.btRed_Click);
+            // 
+            // btSaveWordsToDatabase
+            // 
+            this.btSaveWordsToDatabase.FlatAppearance.BorderSize = 0;
+            this.btSaveWordsToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSaveWordsToDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btSaveWordsToDatabase.ForeColor = System.Drawing.Color.White;
+            this.btSaveWordsToDatabase.Image = global::EngLearningApp.Properties.Resources.save;
+            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(528, 301);
+            this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
+            this.btSaveWordsToDatabase.Size = new System.Drawing.Size(127, 69);
+            this.btSaveWordsToDatabase.TabIndex = 8;
+            this.btSaveWordsToDatabase.Text = "Save";
+            this.btSaveWordsToDatabase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btSaveWordsToDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btSaveWordsToDatabase.UseVisualStyleBackColor = true;
+            this.btSaveWordsToDatabase.Click += new System.EventHandler(this.btSaveWordsToDatabase_Click);
+            // 
+            // btt_Minimalize
+            // 
+            this.btt_Minimalize.FlatAppearance.BorderSize = 0;
+            this.btt_Minimalize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_Minimalize.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btt_Minimalize.ForeColor = System.Drawing.Color.White;
+            this.btt_Minimalize.Image = global::EngLearningApp.Properties.Resources.minimize;
+            this.btt_Minimalize.Location = new System.Drawing.Point(603, 0);
+            this.btt_Minimalize.Name = "btt_Minimalize";
+            this.btt_Minimalize.Size = new System.Drawing.Size(29, 31);
+            this.btt_Minimalize.TabIndex = 10;
+            this.btt_Minimalize.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btt_Minimalize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btt_Minimalize.UseVisualStyleBackColor = true;
+            this.btt_Minimalize.Click += new System.EventHandler(this.btt_Minimalize_Click);
+            // 
+            // btt_close
+            // 
+            this.btt_close.FlatAppearance.BorderSize = 0;
+            this.btt_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btt_close.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btt_close.ForeColor = System.Drawing.Color.White;
+            this.btt_close.Image = global::EngLearningApp.Properties.Resources.cancel;
+            this.btt_close.Location = new System.Drawing.Point(638, 0);
+            this.btt_close.Name = "btt_close";
+            this.btt_close.Size = new System.Drawing.Size(29, 31);
+            this.btt_close.TabIndex = 9;
+            this.btt_close.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btt_close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btt_close.UseVisualStyleBackColor = true;
+            this.btt_close.Click += new System.EventHandler(this.btt_close_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::EngLearningApp.Properties.Resources._new;
+            this.button2.Location = new System.Drawing.Point(0, 222);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(188, 88);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "New words";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // btl_Settings
             // 
@@ -258,9 +295,10 @@
             this.btl_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_Settings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_Settings.ForeColor = System.Drawing.Color.White;
-            this.btl_Settings.Location = new System.Drawing.Point(0, 377);
+            this.btl_Settings.Image = ((System.Drawing.Image)(resources.GetObject("btl_Settings.Image")));
+            this.btl_Settings.Location = new System.Drawing.Point(0, 410);
             this.btl_Settings.Name = "btl_Settings";
-            this.btl_Settings.Size = new System.Drawing.Size(188, 97);
+            this.btl_Settings.Size = new System.Drawing.Size(188, 88);
             this.btl_Settings.TabIndex = 3;
             this.btl_Settings.Text = "Settings";
             this.btl_Settings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -273,10 +311,10 @@
             this.btl_OldWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_OldWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_OldWords.ForeColor = System.Drawing.Color.White;
-            this.btl_OldWords.Image = global::EngLearningApp.Properties.Resources.oldwords;
-            this.btl_OldWords.Location = new System.Drawing.Point(0, 274);
+            this.btl_OldWords.Image = global::EngLearningApp.Properties.Resources.old;
+            this.btl_OldWords.Location = new System.Drawing.Point(0, 316);
             this.btl_OldWords.Name = "btl_OldWords";
-            this.btl_OldWords.Size = new System.Drawing.Size(188, 97);
+            this.btl_OldWords.Size = new System.Drawing.Size(188, 88);
             this.btl_OldWords.TabIndex = 2;
             this.btl_OldWords.Text = "Old words";
             this.btl_OldWords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -289,15 +327,16 @@
             this.btl_NewWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_NewWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_NewWords.ForeColor = System.Drawing.Color.White;
-            this.btl_NewWords.Image = global::EngLearningApp.Properties.Resources.newwords;
-            this.btl_NewWords.Location = new System.Drawing.Point(0, 171);
+            this.btl_NewWords.Image = global::EngLearningApp.Properties.Resources.questioner;
+            this.btl_NewWords.Location = new System.Drawing.Point(0, 128);
             this.btl_NewWords.Name = "btl_NewWords";
-            this.btl_NewWords.Size = new System.Drawing.Size(188, 97);
+            this.btl_NewWords.Size = new System.Drawing.Size(188, 88);
             this.btl_NewWords.TabIndex = 1;
-            this.btl_NewWords.Text = "New words";
+            this.btl_NewWords.Text = "Question words";
             this.btl_NewWords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btl_NewWords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_NewWords.UseVisualStyleBackColor = true;
+            this.btl_NewWords.Click += new System.EventHandler(this.btl_NewWords_Click);
             // 
             // btl_open
             // 
@@ -305,9 +344,10 @@
             this.btl_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_open.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_open.ForeColor = System.Drawing.Color.White;
-            this.btl_open.Location = new System.Drawing.Point(0, 68);
+            this.btl_open.Image = global::EngLearningApp.Properties.Resources.open;
+            this.btl_open.Location = new System.Drawing.Point(0, 34);
             this.btl_open.Name = "btl_open";
-            this.btl_open.Size = new System.Drawing.Size(188, 97);
+            this.btl_open.Size = new System.Drawing.Size(188, 88);
             this.btl_open.TabIndex = 0;
             this.btl_open.Text = "Open";
             this.btl_open.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -320,8 +360,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelFileReader);
             this.Controls.Add(this.panelQuestioner);
+            this.Controls.Add(this.panelFileReader);
             this.Controls.Add(this.pTopPanel);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
@@ -335,20 +375,13 @@
             this.panelFileReader.PerformLayout();
             this.panelQuestioner.ResumeLayout(false);
             this.panelQuestioner.PerformLayout();
-            this.btRed.ResumeLayout(false);
-            this.btRed.PerformLayout();
-            this.btYellow.ResumeLayout(false);
-            this.btYellow.PerformLayout();
-            this.btGreen.ResumeLayout(false);
-            this.btGreen.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
+            this.pTopPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbSelectTextFilePath;
         private System.Windows.Forms.Button btSelectTextFilePath;
@@ -356,15 +389,8 @@
         private System.Windows.Forms.Button btReadTextFile;
         private System.Windows.Forms.Panel panelFileReader;
         private System.Windows.Forms.Panel panelQuestioner;
-        private System.Windows.Forms.Panel btRed;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel btYellow;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel btGreen;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbEnglishWord;
         private System.Windows.Forms.Label lbWordsCount;
-        private System.Windows.Forms.Button btSaveWordsToDatabase;
         private System.Windows.Forms.Panel pLeftButtonPanel;
         private System.Windows.Forms.Button btl_open;
         private System.Windows.Forms.Panel pLogPanel;
@@ -372,6 +398,13 @@
         private System.Windows.Forms.Button btl_Settings;
         private System.Windows.Forms.Button btl_OldWords;
         private System.Windows.Forms.Button btl_NewWords;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btSaveWordsToDatabase;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btt_close;
+        private System.Windows.Forms.Button btt_Minimalize;
     }
 }
 

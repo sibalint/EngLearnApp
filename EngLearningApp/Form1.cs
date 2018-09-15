@@ -103,5 +103,23 @@ namespace EngLearningApp
             panelFileReader.Visible = true;
             panelQuestioner.Visible = false;
         }
+
+        private void btl_NewWords_Click(object sender, EventArgs e)
+        {
+            questioner.questionTheNextWord(wordsFromFile);
+
+            panelFileReader.Visible = false;
+            panelQuestioner.Visible = true;
+        }
+
+        private void btt_Minimalize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btt_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
