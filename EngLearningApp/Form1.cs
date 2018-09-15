@@ -92,7 +92,8 @@ namespace EngLearningApp
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
         {
-            new Database().saveData(questioner.getNewWords());            
+            new Database().saveData(questioner.getNewWords());
+            questioner.setNewWordsAnEmptyList();
         }
 
         #endregion

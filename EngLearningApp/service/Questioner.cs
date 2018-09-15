@@ -18,6 +18,11 @@ namespace EngLearningApp.service
             return newWords;
         }
 
+        public void setNewWordsAnEmptyList()
+        {
+            newWords = new List<Word>();
+        }
+
         public Questioner(Label lbWordsCount, Label lbEnglishWord)
         {
             this.lbWordsCount = lbWordsCount;
