@@ -27,6 +27,9 @@
             text = text.Replace(" \'", ""); 
             text = text.Replace("\' ", "");
 
+            //important to database
+            text = text.Replace("'", "`");
+
             return text;
         }
 

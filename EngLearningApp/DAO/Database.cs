@@ -34,8 +34,11 @@ namespace EngLearningApp.DAO
 
         public void insertWord(string eng, string hun, string knowledgeColor)
         {
-            string sql = "INSERT INTO Words (eng, hun, color) VALUES ('"+eng+"', '"+hun+"','"+knowledgeColor+"' )";
-            command = new SQLiteCommand(sql,dbConnection);
+            command = new SQLiteCommand(dbConnection);
+            command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
+            command.Parameters.AddWithValue("@eng", eng);
+            command.Parameters.AddWithValue("@hun", hun);
+            command.Parameters.AddWithValue("@color", knowledgeColor);
             command.ExecuteNonQuery();
         }
 

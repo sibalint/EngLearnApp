@@ -8,7 +8,7 @@ namespace EngLearningApp
     {
         private List<Word> wordsFromDatabase;
         private List<string> wordsFromDatabase_JustEnglishWords;
-        private List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "'s", "'ll", "n't", "'t", "'ve", "'re", "ly" }); //affixes=ragok
+        private List<string> affixes = new List<string>(new string[] { "s", "es", "ed", "d", "ing", "`s", "`ll", "n`t", "`t", "`ve", "`re", "ly" }); //affixes=ragok
 
         public RemoveFromList(List<Word> wordsFromDatabase)
         {
