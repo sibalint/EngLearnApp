@@ -19,6 +19,7 @@ namespace EngLearningApp
         public List<string> unnessesarryItems(List<string> list)
         {
             list.Remove("");
+            list.AddRange(wordsFromDatabase_JustEnglishWords);
             list = duplicateWords(list);
             list = affix(list);
             list = oneLenghtItems(list);
@@ -36,10 +37,7 @@ namespace EngLearningApp
         }
 
         private List<string> affix(List<string> list) 
-        {
-
-            list.AddRange(wordsFromDatabase_JustEnglishWords);
-
+        { 
             var resultList = new List<string>(list);
             foreach (var word in list)
             {
