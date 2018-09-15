@@ -1,5 +1,6 @@
 ﻿using EngLearningApp.DAO;
 using EngLearningApp.model;
+using EngLearningApp.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace EngLearningApp
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordDirectory = new List<Word>();
         private List<Word> newWords = new List<Word>();
+        private Questioner questioner = new Questioner();
         private string questionedWord;
 
         public Form1()
@@ -63,12 +65,7 @@ namespace EngLearningApp
 
         private void btStartQuestioner_Click(object sender, EventArgs e)
         {
-            lbWordsCount.Text = "Még " + wordsFromFile.Count() + "szó van hátra";
-            questionedWord = wordsFromFile.FirstOrDefault();
-            lbEnglishWord.Text = questionedWord;
-            wordsFromFile.Remove(questionedWord);
-
-
+            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
 
             panelFileReader.Visible = false;
             panelQuestioner.Visible = true;
@@ -83,29 +80,21 @@ namespace EngLearningApp
         #endregion
         private void btGreen_Click(object sender, EventArgs e)
         {
-            lbWordsCount.Text = "Még " + wordsFromFile.Count() + "szó van hátra";
             newWords.Add(new Word(questionedWord, "", KnownColor.Green));
-            questionedWord = wordsFromFile.FirstOrDefault();
-            lbEnglishWord.Text = questionedWord;
-            wordsFromFile.Remove(questionedWord);
+            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
         }
+
 
         private void btYellow_Click(object sender, EventArgs e)
         {
-            lbWordsCount.Text = "Még " + wordsFromFile.Count() + "szó van hátra";
             newWords.Add(new Word(questionedWord, "", KnownColor.Yellow));
-            questionedWord = wordsFromFile.FirstOrDefault();
-            lbEnglishWord.Text = questionedWord;
-            wordsFromFile.Remove(questionedWord);
+            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
         }
 
         private void btRed_Click(object sender, EventArgs e)
         {
-            lbWordsCount.Text = "Még " + wordsFromFile.Count() + "szó van hátra";
             newWords.Add(new Word(questionedWord, "", KnownColor.Red));
-            questionedWord = wordsFromFile.FirstOrDefault();
-            lbEnglishWord.Text = questionedWord;
-            wordsFromFile.Remove(questionedWord);
+            questionedWord = questioner.questionTheNextWord(lbWordsCount, lbEnglishWord, wordsFromFile);
         }
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
