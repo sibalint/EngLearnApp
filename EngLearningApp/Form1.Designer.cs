@@ -258,7 +258,6 @@
             this.btl_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_Settings.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_Settings.ForeColor = System.Drawing.Color.White;
-            this.btl_Settings.Image = global::EngLearningApp.Properties.Resources.settings;
             this.btl_Settings.Location = new System.Drawing.Point(0, 377);
             this.btl_Settings.Name = "btl_Settings";
             this.btl_Settings.Size = new System.Drawing.Size(188, 97);
@@ -306,7 +305,6 @@
             this.btl_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_open.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_open.ForeColor = System.Drawing.Color.White;
-            this.btl_open.Image = global::EngLearningApp.Properties.Resources.open1;
             this.btl_open.Location = new System.Drawing.Point(0, 68);
             this.btl_open.Name = "btl_open";
             this.btl_open.Size = new System.Drawing.Size(188, 97);
