@@ -131,6 +131,7 @@ namespace EngLearningApp
 
         #endregion
 
+        #region Left panel
         private void btl_open_Click(object sender, EventArgs e)
         {
 
@@ -162,16 +163,22 @@ namespace EngLearningApp
             panelQuestioner.Visible = true;
         }
 
-
-
-        private void btl_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btl_NewWords_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btl_OldWords_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btl_Settings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
     }
 }

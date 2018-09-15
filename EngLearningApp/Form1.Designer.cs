@@ -223,6 +223,7 @@
             this.btl_Settings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btl_Settings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_Settings.UseVisualStyleBackColor = true;
+            this.btl_Settings.Click += new System.EventHandler(this.btl_Settings_Click);
             // 
             // btl_OldWords
             // 
@@ -239,6 +240,7 @@
             this.btl_OldWords.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btl_OldWords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_OldWords.UseVisualStyleBackColor = true;
+            this.btl_OldWords.Click += new System.EventHandler(this.btl_OldWords_Click);
             // 
             // btl_Questioner
             // 
