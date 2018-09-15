@@ -33,26 +33,31 @@
             this.panelShowUnKnownList = new System.Windows.Forms.Panel();
             this.rtb_ShowWords = new System.Windows.Forms.RichTextBox();
             this.panelQuestioner = new System.Windows.Forms.Panel();
-            this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbWordsCount = new System.Windows.Forms.Label();
             this.lbEnglishWord = new System.Windows.Forms.Label();
             this.pLeftButtonPanel = new System.Windows.Forms.Panel();
+            this.pLogPanel = new System.Windows.Forms.Panel();
+            this.pTopPanel = new System.Windows.Forms.Panel();
+            this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
             this.btl_NewWords = new System.Windows.Forms.Button();
             this.btl_Settings = new System.Windows.Forms.Button();
             this.btl_OldWords = new System.Windows.Forms.Button();
             this.btl_Questioner = new System.Windows.Forms.Button();
             this.btl_open = new System.Windows.Forms.Button();
-            this.pLogPanel = new System.Windows.Forms.Panel();
-            this.pTopPanel = new System.Windows.Forms.Panel();
             this.btt_Minimalize = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
+            this.panelWelcome = new System.Windows.Forms.Panel();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
             this.pTopPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).BeginInit();
+            this.panelWelcome.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -67,6 +72,7 @@
             this.panelShowUnKnownList.Name = "panelShowUnKnownList";
             this.panelShowUnKnownList.Size = new System.Drawing.Size(667, 382);
             this.panelShowUnKnownList.TabIndex = 5;
+            this.panelShowUnKnownList.Visible = false;
             // 
             // rtb_ShowWords
             // 
@@ -93,23 +99,6 @@
             this.panelQuestioner.Size = new System.Drawing.Size(667, 382);
             this.panelQuestioner.TabIndex = 6;
             this.panelQuestioner.Visible = false;
-            // 
-            // btSaveWordsToDatabase
-            // 
-            this.btSaveWordsToDatabase.FlatAppearance.BorderSize = 0;
-            this.btSaveWordsToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSaveWordsToDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btSaveWordsToDatabase.ForeColor = System.Drawing.Color.White;
-            this.btSaveWordsToDatabase.Image = global::EngLearningApp.Properties.Resources.save;
-            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(528, 301);
-            this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
-            this.btSaveWordsToDatabase.Size = new System.Drawing.Size(127, 69);
-            this.btSaveWordsToDatabase.TabIndex = 8;
-            this.btSaveWordsToDatabase.Text = "Save";
-            this.btSaveWordsToDatabase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btSaveWordsToDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btSaveWordsToDatabase.UseVisualStyleBackColor = true;
-            this.btSaveWordsToDatabase.Click += new System.EventHandler(this.btSaveWordsToDatabase_Click);
             // 
             // button4
             // 
@@ -190,6 +179,44 @@
             this.pLeftButtonPanel.Name = "pLeftButtonPanel";
             this.pLeftButtonPanel.Size = new System.Drawing.Size(188, 482);
             this.pLeftButtonPanel.TabIndex = 7;
+            // 
+            // pLogPanel
+            // 
+            this.pLogPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pLogPanel.Location = new System.Drawing.Point(188, 416);
+            this.pLogPanel.Name = "pLogPanel";
+            this.pLogPanel.Size = new System.Drawing.Size(667, 100);
+            this.pLogPanel.TabIndex = 8;
+            // 
+            // pTopPanel
+            // 
+            this.pTopPanel.Controls.Add(this.btt_Minimalize);
+            this.pTopPanel.Controls.Add(this.btt_close);
+            this.pTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pTopPanel.Location = new System.Drawing.Point(0, 0);
+            this.pTopPanel.Name = "pTopPanel";
+            this.pTopPanel.Size = new System.Drawing.Size(855, 34);
+            this.pTopPanel.TabIndex = 9;
+            this.pTopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseDown);
+            this.pTopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseMove);
+            this.pTopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseUp);
+            // 
+            // btSaveWordsToDatabase
+            // 
+            this.btSaveWordsToDatabase.FlatAppearance.BorderSize = 0;
+            this.btSaveWordsToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSaveWordsToDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btSaveWordsToDatabase.ForeColor = System.Drawing.Color.White;
+            this.btSaveWordsToDatabase.Image = global::EngLearningApp.Properties.Resources.save;
+            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(528, 301);
+            this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
+            this.btSaveWordsToDatabase.Size = new System.Drawing.Size(127, 69);
+            this.btSaveWordsToDatabase.TabIndex = 8;
+            this.btSaveWordsToDatabase.Text = "Save";
+            this.btSaveWordsToDatabase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btSaveWordsToDatabase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btSaveWordsToDatabase.UseVisualStyleBackColor = true;
+            this.btSaveWordsToDatabase.Click += new System.EventHandler(this.btSaveWordsToDatabase_Click);
             // 
             // btl_NewWords
             // 
@@ -276,27 +303,6 @@
             this.btl_open.UseVisualStyleBackColor = true;
             this.btl_open.Click += new System.EventHandler(this.btl_open_Click);
             // 
-            // pLogPanel
-            // 
-            this.pLogPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pLogPanel.Location = new System.Drawing.Point(188, 416);
-            this.pLogPanel.Name = "pLogPanel";
-            this.pLogPanel.Size = new System.Drawing.Size(667, 100);
-            this.pLogPanel.TabIndex = 8;
-            // 
-            // pTopPanel
-            // 
-            this.pTopPanel.Controls.Add(this.btt_Minimalize);
-            this.pTopPanel.Controls.Add(this.btt_close);
-            this.pTopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pTopPanel.Location = new System.Drawing.Point(0, 0);
-            this.pTopPanel.Name = "pTopPanel";
-            this.pTopPanel.Size = new System.Drawing.Size(855, 34);
-            this.pTopPanel.TabIndex = 9;
-            this.pTopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseDown);
-            this.pTopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseMove);
-            this.pTopPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pTopPane_MouseUp);
-            // 
             // btt_Minimalize
             // 
             this.btt_Minimalize.FlatAppearance.BorderSize = 0;
@@ -329,11 +335,43 @@
             this.btt_close.UseVisualStyleBackColor = true;
             this.btt_close.Click += new System.EventHandler(this.btt_close_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(99, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(469, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Welcome to the english word learnel application";
+            // 
+            // pictureBox_WelcomeRocket
+            // 
+            this.pictureBox_WelcomeRocket.Image = global::EngLearningApp.Properties.Resources.Rocket;
+            this.pictureBox_WelcomeRocket.InitialImage = global::EngLearningApp.Properties.Resources.Rocket;
+            this.pictureBox_WelcomeRocket.Location = new System.Drawing.Point(249, 86);
+            this.pictureBox_WelcomeRocket.Name = "pictureBox_WelcomeRocket";
+            this.pictureBox_WelcomeRocket.Size = new System.Drawing.Size(146, 125);
+            this.pictureBox_WelcomeRocket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_WelcomeRocket.TabIndex = 1;
+            this.pictureBox_WelcomeRocket.TabStop = false;
+            // 
+            // panelWelcome
+            // 
+            this.panelWelcome.Controls.Add(this.pictureBox_WelcomeRocket);
+            this.panelWelcome.Controls.Add(this.label2);
+            this.panelWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelWelcome.Location = new System.Drawing.Point(188, 34);
+            this.panelWelcome.Name = "panelWelcome";
+            this.panelWelcome.Size = new System.Drawing.Size(667, 382);
+            this.panelWelcome.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
+            this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.pLogPanel);
@@ -351,6 +389,9 @@
             this.panelQuestioner.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
             this.pTopPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).EndInit();
+            this.panelWelcome.ResumeLayout(false);
+            this.panelWelcome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -376,6 +417,9 @@
         private System.Windows.Forms.Button btt_close;
         private System.Windows.Forms.Button btt_Minimalize;
         private System.Windows.Forms.RichTextBox rtb_ShowWords;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox_WelcomeRocket;
+        private System.Windows.Forms.Panel panelWelcome;
     }
 }
 

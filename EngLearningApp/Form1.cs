@@ -161,6 +161,7 @@ namespace EngLearningApp
             if(lbEnglishWord.Text.Equals("english"))
                 questioner.questionTheNextWord(wordsFromFile);
 
+            panelWelcome.Visible = false;
             panelShowUnKnownList.Visible = false;
             panelQuestioner.Visible = true;
         }
@@ -174,6 +175,7 @@ namespace EngLearningApp
             {
                 rtb_ShowWords.Text += word + "\n";
             }
+            panelWelcome.Visible = false;
             panelShowUnKnownList.Visible = true;
             panelQuestioner.Visible = false;
         }
@@ -185,6 +187,7 @@ namespace EngLearningApp
             {
                 rtb_ShowWords.Text += word.english + "\n";
             }
+            panelWelcome.Visible = false;
             panelShowUnKnownList.Visible = true;
             panelQuestioner.Visible = false;
         }
