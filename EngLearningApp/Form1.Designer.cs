@@ -334,8 +334,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.panelQuestioner);
+            this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
             this.Controls.Add(this.pTopPanel);

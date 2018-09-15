@@ -158,7 +158,8 @@ namespace EngLearningApp
 
         private void btl_Questioner_Click(object sender, EventArgs e)
         {
-            questioner.questionTheNextWord(wordsFromFile);
+            if(lbEnglishWord.Text.Equals("english"))
+                questioner.questionTheNextWord(wordsFromFile);
 
             panelShowUnKnownList.Visible = false;
             panelQuestioner.Visible = true;
