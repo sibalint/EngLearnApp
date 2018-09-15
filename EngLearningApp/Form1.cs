@@ -97,5 +97,11 @@ namespace EngLearningApp
         }
 
         #endregion
+
+        private void btl_open_Click(object sender, EventArgs e)
+        {
+            panelFileReader.Visible = true;
+            panelQuestioner.Visible = false;
+        }
     }
 }

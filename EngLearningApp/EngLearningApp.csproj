@@ -167,9 +167,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sources\images\new.png" />
     <Content Include="sources\images\newwords.png" />
+    <Content Include="sources\images\old.png" />
     <Content Include="sources\images\oldwords.png" />
     <Content Include="sources\images\open.png" />
+    <Content Include="sources\images\questioner.png" />
     <Content Include="sources\images\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

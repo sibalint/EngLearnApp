@@ -315,6 +315,7 @@
             this.btl_open.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btl_open.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_open.UseVisualStyleBackColor = true;
+            this.btl_open.Click += new System.EventHandler(this.btl_open_Click);
             // 
             // Form1
             // 
