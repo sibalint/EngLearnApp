@@ -11,13 +11,20 @@ namespace EngLearningApp
     class FileReader
     {
         private Logger log = new Logger();
-        private string path = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
-        
+        private string path = Properties.Settings.Default.path;
+
+        public void setPath(string path)
+        {
+            this.path = path;
+            Properties.Settings.Default.path = path;
+            Properties.Settings.Default.Save();
+        }
+
 
         public void fileChooser(OpenFileDialog openFileDialog)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
-                this.path = openFileDialog.FileName;
+                this.setPath(openFileDialog.FileName);
         }
 
         public string read()
