@@ -64,21 +64,28 @@ namespace EngLearningApp.DAO
         {
             dbConnection.Close();
         }
-
-        private void runSQL(string sql)
-        {
-            command = new SQLiteCommand(sql, dbConnection);
-            command.ExecuteNonQuery();
-        }
+        
 
         private void insertWord(string eng, string hun, string knowledgeColor)
         {
-            command = new SQLiteCommand(dbConnection);
-            command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
+            if (!containsThisKey(eng))
+            {
+                command = new SQLiteCommand(dbConnection);
+                command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
+                command.Parameters.AddWithValue("@eng", eng);
+                command.Parameters.AddWithValue("@hun", hun);
+                command.Parameters.AddWithValue("@color", knowledgeColor);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private bool containsThisKey(string eng)
+        {
+            string sql = "SELECT eng FROM Words WHERE eng == @eng";
+            command = new SQLiteCommand(sql, dbConnection);
             command.Parameters.AddWithValue("@eng", eng);
-            command.Parameters.AddWithValue("@hun", hun);
-            command.Parameters.AddWithValue("@color", knowledgeColor);
-            command.ExecuteNonQuery();
+            SQLiteDataReader reader = command.ExecuteReader();
+            return reader.HasRows;
         }
 
         public List<Word> getWords()
