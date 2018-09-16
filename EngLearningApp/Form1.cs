@@ -36,36 +36,6 @@ namespace EngLearningApp
         }
         #endregion
 
-        #region Panel: Questioner
-
-
-        private void btGreen_Click(object sender, EventArgs e)
-        {
-            questioner.addWordToNewWordsList(model.KnownColor.Green);
-            questioner.questionTheNextWord(wordsFromFile);
-        }
-
-
-        private void btYellow_Click(object sender, EventArgs e)
-        {
-            questioner.addWordToNewWordsList(model.KnownColor.Yellow);
-            questioner.questionTheNextWord(wordsFromFile);
-        }
-
-        private void btRed_Click(object sender, EventArgs e)
-        {
-            questioner.addWordToNewWordsList(model.KnownColor.Red);
-            questioner.questionTheNextWord(wordsFromFile);
-        }
-
-        private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
-        {
-            new Database().saveData(questioner.getNewWords());
-            questioner.setNewWordsAnEmptyList();
-        }
-
-        #endregion
-
         #region Panel: Top bar
         private void btt_Minimalize_Click(object sender, EventArgs e)
         {
@@ -174,6 +144,35 @@ namespace EngLearningApp
         private void btl_Settings_Click(object sender, EventArgs e)
         {
 
+        }
+
+        #endregion
+
+        #region Panel: Questioner
+
+        private void btGreen_Click(object sender, EventArgs e)
+        {
+            questioner.addWordToNewWordsList(model.KnownColor.Green);
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+
+
+        private void btYellow_Click(object sender, EventArgs e)
+        {
+            questioner.addWordToNewWordsList(model.KnownColor.Yellow);
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+
+        private void btRed_Click(object sender, EventArgs e)
+        {
+            questioner.addWordToNewWordsList(model.KnownColor.Red);
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+
+        private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
+        {
+            new Database().saveData(questioner.getNewWords());
+            questioner.setNewWordsAnEmptyList();
         }
 
         #endregion
