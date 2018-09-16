@@ -184,9 +184,9 @@
             this.lbWordsCount.AutoSize = true;
             this.lbWordsCount.Location = new System.Drawing.Point(3, 3);
             this.lbWordsCount.Name = "lbWordsCount";
-            this.lbWordsCount.Size = new System.Drawing.Size(116, 21);
+            this.lbWordsCount.Size = new System.Drawing.Size(74, 21);
             this.lbWordsCount.TabIndex = 4;
-            this.lbWordsCount.Text = "Word number";
+            this.lbWordsCount.Text = "                ";
             // 
             // pLeftButtonPanel
             // 

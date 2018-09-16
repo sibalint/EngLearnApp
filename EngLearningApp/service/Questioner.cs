@@ -48,7 +48,7 @@ namespace EngLearningApp.service
 
         public string questionTheNextWord( List<string> wordsFromFile)
         {
-            lbWordsCount.Text = "Még " + wordsFromFile.Count() + " szó van hátra";
+            lbWordsCount.Text = wordsFromFile.Count() + " words left";
             questionedWord = wordsFromFile.FirstOrDefault();
             tbEnglishWord.Text = questionedWord;
             wordsFromFile.Remove(questionedWord);
