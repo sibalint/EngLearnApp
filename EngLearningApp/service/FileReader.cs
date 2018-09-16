@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
+using EngLearningApp.service;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
@@ -7,7 +9,22 @@ namespace EngLearningApp
 {
     class FileReader
     {
+        Logger log = new Logger();
+
         public string readPdfToString(string filePath)
+        {
+            try
+            {
+                return readPdfToString_whitoutExceptionHandling(filePath);
+            }
+            catch (Exception e )
+            {
+                log.error(new Exception("Read PDF file error!", e));
+                throw;                
+            }
+        }
+
+        private string readPdfToString_whitoutExceptionHandling(string filePath)
         {
             StringBuilder text = new StringBuilder();
 
@@ -29,9 +46,18 @@ namespace EngLearningApp
             return text.ToString();
         }
 
+
         public string readTxtToString(string filePath)
         {
-            return File.ReadAllText(filePath);            
+            try
+            {
+                return File.ReadAllText(filePath);
+            }
+            catch (Exception e)
+            {
+                log.error(new Exception("Read Text file error!", e));
+                throw;
+            }
         }
 
 
