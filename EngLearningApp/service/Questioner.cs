@@ -9,17 +9,17 @@ namespace EngLearningApp.service
     {
         #region Members
         private Label lbWordsCount;
-        private Label lbEnglishWord;
+        private TextBox tbEnglishWord;
 
         private string questionedWord;
         private List<Word> newWords;
         #endregion
 
         #region Constructor
-        public Questioner(Label lbWordsCount, Label lbEnglishWord)
+        public Questioner(Label lbWordsCount, TextBox tbEnglishWord)
         {
             this.lbWordsCount = lbWordsCount;
-            this.lbEnglishWord = lbEnglishWord;
+            this.tbEnglishWord = tbEnglishWord;
             newWords = new List<Word>();
         }
         #endregion
@@ -39,13 +39,18 @@ namespace EngLearningApp.service
         {
             newWords = new List<Word>();
         }
+
+        public void setQuestionedWord(string questionedWord)
+        {
+            this.questionedWord = questionedWord;
+        }
         #endregion        
 
         public string questionTheNextWord( List<string> wordsFromFile)
         {
             lbWordsCount.Text = "Még " + wordsFromFile.Count() + " szó van hátra";
             questionedWord = wordsFromFile.FirstOrDefault();
-            lbEnglishWord.Text = questionedWord;
+            tbEnglishWord.Text = questionedWord;
             wordsFromFile.Remove(questionedWord);
 
             return questionedWord;

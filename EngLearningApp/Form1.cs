@@ -27,7 +27,7 @@ namespace EngLearningApp
 
             #endregion
 
-            questioner = new Questioner(lbWordsCount, lbEnglishWord);
+            questioner = new Questioner(lbWordsCount, tbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
 
@@ -107,7 +107,7 @@ namespace EngLearningApp
 
         private void btl_Questioner_Click(object sender, EventArgs e)
         {
-            if(lbEnglishWord.Text.Equals("english"))
+            if(tbEnglishWord.Text.Equals("english"))
                 questioner.questionTheNextWord(wordsFromFile);
 
             panelWelcome.Visible = false;
@@ -180,6 +180,10 @@ namespace EngLearningApp
             questioner.setNewWordsAnEmptyList();
         }
 
+        private void tbEnglishWord_TextChanged(object sender, EventArgs e)
+        {
+            questioner.setQuestionedWord(tbEnglishWord.Text);
+        }
         #endregion
 
 
@@ -210,5 +214,6 @@ namespace EngLearningApp
             }
         }
         #endregion
+
     }
 }
