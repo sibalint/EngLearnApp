@@ -124,10 +124,10 @@ namespace EngLearningApp
 
             #region Read file to list
             FileReader fileReader = new FileReader();
-            TextFormatter textFormatter = new TextFormatter();
+            StringToList textFormatter = new StringToList();
 
             string fullText = fileReader.readTxtToString(filePath);
-            wordsFromFile = textFormatter.getWorldListFromString(fullText, wordsFromDatabase);
+            wordsFromFile = textFormatter.getList(fullText, wordsFromDatabase);
 
             //Translator d = new Translator();
             //wordDirectory = d.getDirectory(wordSet);

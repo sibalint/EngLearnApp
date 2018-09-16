@@ -143,7 +143,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\RemoveFromList.cs" />
     <Compile Include="service\RemoveFromText.cs" />
-    <Compile Include="service\TextFormatter.cs" />
+    <Compile Include="service\StringToList.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
