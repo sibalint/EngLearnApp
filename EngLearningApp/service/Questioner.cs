@@ -7,12 +7,24 @@ namespace EngLearningApp.service
 {
     class Questioner
     {
+        #region Members
         private Label lbWordsCount;
         private Label lbEnglishWord;
 
         private string questionedWord;
         private List<Word> newWords;
+        #endregion
 
+        #region Constructor
+        public Questioner(Label lbWordsCount, Label lbEnglishWord)
+        {
+            this.lbWordsCount = lbWordsCount;
+            this.lbEnglishWord = lbEnglishWord;
+            newWords = new List<Word>();
+        }
+        #endregion
+
+        #region Getters/Setters
         public List<Word> getNewWords()
         {
             return newWords;
@@ -22,13 +34,7 @@ namespace EngLearningApp.service
         {
             newWords = new List<Word>();
         }
-
-        public Questioner(Label lbWordsCount, Label lbEnglishWord)
-        {
-            this.lbWordsCount = lbWordsCount;
-            this.lbEnglishWord = lbEnglishWord;
-            newWords = new List<Word>();
-        }
+        #endregion        
 
         public string questionTheNextWord( List<string> wordsFromFile)
         {
