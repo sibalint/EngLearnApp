@@ -11,27 +11,24 @@ namespace EngLearningApp
 {
     public partial class Form1 : Form
     {
-        private string filePath { get; set; }
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordsFromDatabase = new List<Word>();
+
+        private FileReader fileReader;
+        private StringToList textFormatter;
         private Questioner questioner;
+        
 
         #region Constructor
         public Form1()
         {
             InitializeComponent();
 
-            #region Test file path
-            //filePath = @"C:\Users\sypy\Downloads\HarryPotterAndTheSorceresStone.pdf";
-            filePath = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
-
-            #endregion
-
+            fileReader = new FileReader();
+            textFormatter = new StringToList();
             questioner = new Questioner(lbWordsCount, tbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
-
-            new FileReader().read(filePath);
 
         }
         #endregion
@@ -84,28 +81,15 @@ namespace EngLearningApp
         #region Panel: Left bar
         private void btl_open_Click(object sender, EventArgs e)
         {
+            fileReader.fileChooser(openFileDialog1);
 
-            #region File chooser
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                this.filePath = openFileDialog1.FileName;
-            }
-            #endregion
-
-            #region Read file to list
-            FileReader fileReader = new FileReader();
-            StringToList textFormatter = new StringToList();
-
-            string fullText = fileReader.read(filePath);
+            string fullText = fileReader.read();
             wordsFromFile = textFormatter.getList(fullText, wordsFromDatabase);
-
-            //Translator d = new Translator();
-            //wordDirectory = d.getDirectory(wordSet);
-            #endregion
 
             message("File reading is successfull...");
 
         }
+
 
         private void btl_Questioner_Click(object sender, EventArgs e)
         {

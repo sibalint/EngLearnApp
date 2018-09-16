@@ -10,16 +10,23 @@ namespace EngLearningApp
 {
     class FileReader
     {
-        Logger log = new Logger();
+        private Logger log = new Logger();
+        private string path = @"F:\Dev\videoCourses\Udemy - Spring Framework 5 Beginner to Guru\02 Building a Spring Boot Web App\009 Open Project in IntelliJ-subtitle-en.vtt";
+        
 
-        public string read(string path)
+        public void fileChooser(OpenFileDialog openFileDialog)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                this.path = openFileDialog.FileName;
+        }
+
+        public string read()
         {
             if (isPdf(path))
                 return readPdf(path);
             else
                 return readTxt(path);
-        }
-        
+        }        
 
         private string readPdf(string filePath)
         {
