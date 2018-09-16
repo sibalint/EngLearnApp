@@ -53,6 +53,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.panelShowUnKnownListBottomPanel = new System.Windows.Forms.Panel();
+            this.bt_NwB_openWeb = new System.Windows.Forms.Button();
+            this.bt_NwB_Copy = new System.Windows.Forms.Button();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
@@ -60,6 +63,7 @@
             this.pTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).BeginInit();
             this.panelWelcome.SuspendLayout();
+            this.panelShowUnKnownListBottomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -68,6 +72,7 @@
             // 
             // panelShowUnKnownList
             // 
+            this.panelShowUnKnownList.Controls.Add(this.panelShowUnKnownListBottomPanel);
             this.panelShowUnKnownList.Controls.Add(this.rtb_ShowWords);
             this.panelShowUnKnownList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelShowUnKnownList.Location = new System.Drawing.Point(188, 34);
@@ -81,9 +86,9 @@
             this.rtb_ShowWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.rtb_ShowWords.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_ShowWords.ForeColor = System.Drawing.Color.White;
-            this.rtb_ShowWords.Location = new System.Drawing.Point(10, 7);
+            this.rtb_ShowWords.Location = new System.Drawing.Point(3, 7);
             this.rtb_ShowWords.Name = "rtb_ShowWords";
-            this.rtb_ShowWords.Size = new System.Drawing.Size(598, 369);
+            this.rtb_ShowWords.Size = new System.Drawing.Size(661, 410);
             this.rtb_ShowWords.TabIndex = 0;
             this.rtb_ShowWords.Text = "";
             // 
@@ -382,14 +387,56 @@
             this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
             // 
+            // panelShowUnKnownListBottomPanel
+            // 
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_Copy);
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_openWeb);
+            this.panelShowUnKnownListBottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelShowUnKnownListBottomPanel.Location = new System.Drawing.Point(0, 428);
+            this.panelShowUnKnownListBottomPanel.Name = "panelShowUnKnownListBottomPanel";
+            this.panelShowUnKnownListBottomPanel.Size = new System.Drawing.Size(667, 27);
+            this.panelShowUnKnownListBottomPanel.TabIndex = 9;
+            // 
+            // bt_NwB_openWeb
+            // 
+            this.bt_NwB_openWeb.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_openWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_openWeb.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_openWeb.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_openWeb.Location = new System.Drawing.Point(537, 0);
+            this.bt_NwB_openWeb.Name = "bt_NwB_openWeb";
+            this.bt_NwB_openWeb.Size = new System.Drawing.Size(128, 24);
+            this.bt_NwB_openWeb.TabIndex = 2;
+            this.bt_NwB_openWeb.Text = "Open Google Translator";
+            this.bt_NwB_openWeb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_openWeb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_openWeb.UseVisualStyleBackColor = true;
+            this.bt_NwB_openWeb.Click += new System.EventHandler(this.bt_NwB_openWeb_Click);
+            // 
+            // bt_NwB_Copy
+            // 
+            this.bt_NwB_Copy.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_Copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_Copy.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_Copy.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_Copy.Location = new System.Drawing.Point(452, 0);
+            this.bt_NwB_Copy.Name = "bt_NwB_Copy";
+            this.bt_NwB_Copy.Size = new System.Drawing.Size(79, 24);
+            this.bt_NwB_Copy.TabIndex = 3;
+            this.bt_NwB_Copy.Text = "Copy";
+            this.bt_NwB_Copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_Copy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_Copy.UseVisualStyleBackColor = true;
+            this.bt_NwB_Copy.Click += new System.EventHandler(this.bt_NwB_Copy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelQuestioner);
-            this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelShowUnKnownList);
+            this.Controls.Add(this.panelWelcome);
+            this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
             this.Controls.Add(this.pTopPanel);
@@ -410,6 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).EndInit();
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
+            this.panelShowUnKnownListBottomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -439,6 +487,9 @@
         private System.Windows.Forms.Panel panelWelcome;
         private System.Windows.Forms.TextBox tbEnglishWord;
         private System.Windows.Forms.Label lbMessage;
+        private System.Windows.Forms.Panel panelShowUnKnownListBottomPanel;
+        private System.Windows.Forms.Button bt_NwB_Copy;
+        private System.Windows.Forms.Button bt_NwB_openWeb;
     }
 }
 

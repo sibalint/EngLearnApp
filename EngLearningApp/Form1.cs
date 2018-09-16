@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace EngLearningApp
 {
@@ -41,9 +42,7 @@ namespace EngLearningApp
             #endregion
 
             #region Sandbox
-
-            Translator.EngToHun("about");
-
+            
             #endregion
         }
         #endregion
@@ -208,6 +207,21 @@ namespace EngLearningApp
 
         #endregion
 
+        #region Panel: Show words
+
+        private void bt_NwB_Copy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(rtb_ShowWords.Text);
+        }
+
+        private void bt_NwB_openWeb_Click(object sender, EventArgs e)
+        {
+            string url = "https://translate.google.hu/#en/hu/" + rtb_ShowWords.Text.Trim().Replace("\n", "%0A");
+            Process.Start(url);
+        }
+
+        #endregion
+
 
         #region Protected methods
         /// <summary>
@@ -242,7 +256,9 @@ namespace EngLearningApp
         {
             lbMessage.Text = message;
         }
+
         #endregion
 
+        
     }
 }
