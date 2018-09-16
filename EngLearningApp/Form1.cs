@@ -39,6 +39,12 @@ namespace EngLearningApp
             }
 
             #endregion
+
+            #region Sandbox
+
+            Translator.EngToHun("about");
+
+            #endregion
         }
         #endregion
 
