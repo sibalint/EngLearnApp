@@ -5,15 +5,6 @@ namespace EngLearningApp.service
 {
     class Logger
     {
-        public void messageBox(Exception e)
-        {
-            MessageBox.Show("ERROR: " + e.ToString());
-        }
-
-        public void statusPanel(string e)
-        {
-#warning implement
-        }
         
         public void error(Exception e)
         {
