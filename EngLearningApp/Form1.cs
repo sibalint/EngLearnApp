@@ -171,11 +171,44 @@ namespace EngLearningApp
 
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
         {
+            saveData();
+        }
+
+        private void saveData()
+        {
             new Database().saveData(questioner.getNewWords());
             questioner.setNewWordsAnEmptyList();
         }
 
         #endregion
 
+
+        #region Protected methods
+        /// <summary>
+        /// This method show a confirm box, if user wants close the app, but it has new words whitout save to database.
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+            if (!questioner.getNewWordsIsEmpty())//new words not empty
+            {
+                // Confirm user wants to close
+                switch (MessageBox.Show(this, "Save new words?", "Closing", MessageBoxButtons.YesNoCancel))
+                {
+                    case DialogResult.Yes:
+                        saveData();
+                        break;
+                    case DialogResult.No:
+                        break;
+                    default:
+                        e.Cancel = true;
+                        break;
+                }
+            }
+        }
+        #endregion
     }
 }

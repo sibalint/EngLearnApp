@@ -30,6 +30,11 @@ namespace EngLearningApp.service
             return newWords;
         }
 
+        public bool getNewWordsIsEmpty()
+        {
+            return newWords.Count == 0;
+        }
+
         public void setNewWordsAnEmptyList()
         {
             newWords = new List<Word>();
