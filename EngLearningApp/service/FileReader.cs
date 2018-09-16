@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Windows.Forms;
 using EngLearningApp.service;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
@@ -19,8 +20,9 @@ namespace EngLearningApp
             }
             catch (Exception e )
             {
-                log.error(new Exception("Read PDF file error!", e));
-                throw;                
+                MessageBox.Show("ERROR: PDF file reading failed!");
+                log.error(e);
+                throw;
             }
         }
 
@@ -55,7 +57,8 @@ namespace EngLearningApp
             }
             catch (Exception e)
             {
-                log.error(new Exception("Read Text file error!", e));
+                MessageBox.Show("ERROR: Read Text file failed!");
+                log.error(e);
                 throw;
             }
         }
