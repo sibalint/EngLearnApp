@@ -16,7 +16,7 @@ namespace EngLearningApp
         private List<Word> wordsFromDatabase = new List<Word>();
         private Questioner questioner;
 
-
+        #region Constructor
         public Form1()
         {
             InitializeComponent();
@@ -34,30 +34,9 @@ namespace EngLearningApp
 
 
         }
-
-        #region FileReading
-        private void btSelectTextFilePath_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btReadTextFile_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void btStartQuestioner_Click(object sender, EventArgs e)
-        {
-            questioner.questionTheNextWord(wordsFromFile);
-
-            panelShowUnKnownList.Visible = false;
-            panelQuestioner.Visible = true;
-        }
         #endregion
 
-        #region questioner panel
+        #region Panel: Questioner
 
 
         private void btGreen_Click(object sender, EventArgs e)
@@ -87,7 +66,7 @@ namespace EngLearningApp
 
         #endregion
 
-        #region Top panel
+        #region Panel: Top bar
         private void btt_Minimalize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -132,7 +111,7 @@ namespace EngLearningApp
 
         #endregion
 
-        #region Left panel
+        #region Panel: Left bar
         private void btl_open_Click(object sender, EventArgs e)
         {
 

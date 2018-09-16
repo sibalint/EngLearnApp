@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.tbEnglishWord = new System.Windows.Forms.TextBox();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // panelQuestioner
             // 
+            this.panelQuestioner.Controls.Add(this.tbEnglishWord);
             this.panelQuestioner.Controls.Add(this.btSaveWordsToDatabase);
             this.panelQuestioner.Controls.Add(this.button4);
             this.panelQuestioner.Controls.Add(this.button3);
@@ -366,13 +368,25 @@
             this.panelWelcome.Size = new System.Drawing.Size(667, 382);
             this.panelWelcome.TabIndex = 9;
             // 
+            // tbEnglishWord
+            // 
+            this.tbEnglishWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.tbEnglishWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbEnglishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.tbEnglishWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.tbEnglishWord.Location = new System.Drawing.Point(249, 147);
+            this.tbEnglishWord.Name = "tbEnglishWord";
+            this.tbEnglishWord.Size = new System.Drawing.Size(221, 24);
+            this.tbEnglishWord.TabIndex = 9;
+            this.tbEnglishWord.Text = "english";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
-            this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelQuestioner);
+            this.Controls.Add(this.panelWelcome);
             this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
@@ -420,6 +434,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox_WelcomeRocket;
         private System.Windows.Forms.Panel panelWelcome;
+        private System.Windows.Forms.TextBox tbEnglishWord;
     }
 }
 
