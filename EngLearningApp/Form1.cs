@@ -82,19 +82,24 @@ namespace EngLearningApp
         private void btl_open_Click(object sender, EventArgs e)
         {
             fileReader.fileChooser(openFileDialog1);
-
-            string fullText = fileReader.read();
-            wordsFromFile = textFormatter.getList(fullText, wordsFromDatabase);
-
-            message("File reading is successfull...");
+            btl_Questioner.Text = "Read new file";
+            message("File opening is successfull...");
 
         }
 
 
         private void btl_Questioner_Click(object sender, EventArgs e)
         {
-            if(tbEnglishWord.Text.Equals("english"))
+            if (fileReader.hasNewFile())
+            {
+                //read list
+                string fullText = fileReader.read();
+                wordsFromFile = textFormatter.getList(fullText, wordsFromDatabase);
+                //start questioning
                 questioner.questionTheNextWord(wordsFromFile);
+
+                btl_Questioner.Text = "Question words";
+            }
 
             panelWelcome.Visible = false;
             panelShowUnKnownList.Visible = false;

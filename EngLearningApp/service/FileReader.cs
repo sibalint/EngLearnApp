@@ -12,12 +12,19 @@ namespace EngLearningApp
     {
         private Logger log = new Logger();
         private string path = Properties.Settings.Default.path;
+        private bool isNewFile = true;
 
         public void setPath(string path)
         {
             this.path = path;
             Properties.Settings.Default.path = path;
             Properties.Settings.Default.Save();
+            isNewFile = true;
+        }
+
+        public bool hasNewFile()
+        {
+            return isNewFile;
         }
 
 
@@ -29,6 +36,8 @@ namespace EngLearningApp
 
         public string read()
         {
+            isNewFile = false;
+
             if (isPdf(path))
                 return readPdf(path);
             else

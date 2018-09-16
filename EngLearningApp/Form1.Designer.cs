@@ -46,13 +46,13 @@
             this.btl_Questioner = new System.Windows.Forms.Button();
             this.btl_open = new System.Windows.Forms.Button();
             this.pLogPanel = new System.Windows.Forms.Panel();
+            this.lbMessage = new System.Windows.Forms.Label();
             this.pTopPanel = new System.Windows.Forms.Panel();
             this.btt_Minimalize = new System.Windows.Forms.Button();
             this.btt_close = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.lbMessage = new System.Windows.Forms.Label();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
@@ -264,7 +264,7 @@
             this.btl_Questioner.Name = "btl_Questioner";
             this.btl_Questioner.Size = new System.Drawing.Size(188, 88);
             this.btl_Questioner.TabIndex = 1;
-            this.btl_Questioner.Text = "Question words";
+            this.btl_Questioner.Text = "Read new file";
             this.btl_Questioner.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btl_Questioner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btl_Questioner.UseVisualStyleBackColor = true;
@@ -295,6 +295,16 @@
             this.pLogPanel.Name = "pLogPanel";
             this.pLogPanel.Size = new System.Drawing.Size(667, 27);
             this.pLogPanel.TabIndex = 8;
+            // 
+            // lbMessage
+            // 
+            this.lbMessage.AutoSize = true;
+            this.lbMessage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbMessage.Location = new System.Drawing.Point(609, 0);
+            this.lbMessage.Name = "lbMessage";
+            this.lbMessage.Size = new System.Drawing.Size(58, 21);
+            this.lbMessage.TabIndex = 10;
+            this.lbMessage.Text = "            ";
             // 
             // pTopPanel
             // 
@@ -371,16 +381,6 @@
             this.panelWelcome.Name = "panelWelcome";
             this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
-            // 
-            // lbMessage
-            // 
-            this.lbMessage.AutoSize = true;
-            this.lbMessage.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbMessage.Location = new System.Drawing.Point(609, 0);
-            this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(58, 21);
-            this.lbMessage.TabIndex = 10;
-            this.lbMessage.Text = "            ";
             // 
             // Form1
             // 
