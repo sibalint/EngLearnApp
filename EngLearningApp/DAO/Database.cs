@@ -12,11 +12,6 @@ namespace EngLearningApp.DAO
         SQLiteConnection dbConnection;
         SQLiteCommand command;
 
-        public Database()
-        {
-            
-        }
-
         public List<Word> initializeInMemoryList()
         {
             try { 
