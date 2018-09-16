@@ -1,11 +1,14 @@
 ﻿using EngLearningApp.model;
+using EngLearningApp.service;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace EngLearningApp.DAO
 {
     class Database
     {
+        Logger log = new Logger();
         SQLiteConnection dbConnection;
         SQLiteCommand command;
 
@@ -16,20 +19,38 @@ namespace EngLearningApp.DAO
 
         public List<Word> initializeInMemoryList()
         {
+            try { 
             init();
             var result = getWords();
             close();
             return result;
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show("ERROR: Database connecting failed. Please restart the Application.");
+                log.error(e);
+                return null;
+            }
         }
 
         public void saveData(List<Word> newWords)
         {
-            init();
-            foreach (var word in newWords)
+            try
             {
-                insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
+                init();
+                foreach (var word in newWords)
+                {
+                    insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
+                }
+                close();
             }
-            close();
+            catch (System.Exception e)
+            {
+                MessageBox.Show("ERROR: Saving is failed!");
+                log.error(e);
+
+            }
+            
         }
 
 

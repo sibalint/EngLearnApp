@@ -10,7 +10,7 @@ namespace EngLearningApp.service
             MessageBox.Show("ERROR: " + e.ToString());
         }
 
-        public void statusPanel(Exception e)
+        public void statusPanel(string e)
         {
 #warning implement
         }
