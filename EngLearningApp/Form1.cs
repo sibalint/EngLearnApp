@@ -2,6 +2,7 @@
 using EngLearningApp.model;
 using EngLearningApp.service;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -17,19 +18,27 @@ namespace EngLearningApp
         private FileReader fileReader;
         private StringToList textFormatter;
         private Questioner questioner;
-        
+
 
         #region Constructor
-        public Form1()
+        public Form1(string argument)
         {
-            InitializeComponent();
-
+            InitializeComponent(); 
+            
             fileReader = new FileReader();
             textFormatter = new StringToList();
             questioner = new Questioner(lbWordsCount, tbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
+            
+            #region Drag and drop a file?
+            if (File.Exists(argument))
+            {
+                fileReader.setPath(argument);
+                QuestionerButton();
+            }
 
+            #endregion
         }
         #endregion
 
@@ -89,6 +98,11 @@ namespace EngLearningApp
 
 
         private void btl_Questioner_Click(object sender, EventArgs e)
+        {
+            QuestionerButton();
+        }
+
+        private void QuestionerButton()
         {
             if (fileReader.hasNewFile())
             {
