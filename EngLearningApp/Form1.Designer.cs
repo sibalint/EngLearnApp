@@ -94,7 +94,6 @@
             this.panelQuestioner.Controls.Add(this.button4);
             this.panelQuestioner.Controls.Add(this.button3);
             this.panelQuestioner.Controls.Add(this.button1);
-            this.panelQuestioner.Controls.Add(this.lbWordsCount);
             this.panelQuestioner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQuestioner.Location = new System.Drawing.Point(188, 34);
             this.panelQuestioner.Name = "panelQuestioner";
@@ -122,7 +121,7 @@
             this.btSaveWordsToDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btSaveWordsToDatabase.ForeColor = System.Drawing.Color.White;
             this.btSaveWordsToDatabase.Image = global::EngLearningApp.Properties.Resources.save;
-            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(528, 301);
+            this.btSaveWordsToDatabase.Location = new System.Drawing.Point(537, 380);
             this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
             this.btSaveWordsToDatabase.Size = new System.Drawing.Size(127, 69);
             this.btSaveWordsToDatabase.TabIndex = 8;
@@ -183,7 +182,7 @@
             // lbWordsCount
             // 
             this.lbWordsCount.AutoSize = true;
-            this.lbWordsCount.Location = new System.Drawing.Point(6, 349);
+            this.lbWordsCount.Location = new System.Drawing.Point(3, 3);
             this.lbWordsCount.Name = "lbWordsCount";
             this.lbWordsCount.Size = new System.Drawing.Size(116, 21);
             this.lbWordsCount.TabIndex = 4;
@@ -290,6 +289,7 @@
             // pLogPanel
             // 
             this.pLogPanel.Controls.Add(this.lbMessage);
+            this.pLogPanel.Controls.Add(this.lbWordsCount);
             this.pLogPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pLogPanel.Location = new System.Drawing.Point(188, 489);
             this.pLogPanel.Name = "pLogPanel";
