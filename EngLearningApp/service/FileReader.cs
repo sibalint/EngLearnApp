@@ -12,7 +12,16 @@ namespace EngLearningApp
     {
         Logger log = new Logger();
 
-        public string readPdfToString(string filePath)
+        public string read(string path)
+        {
+            if (isPdf(path))
+                return readPdf(path);
+            else
+                return readTxt(path);
+        }
+        
+
+        private string readPdf(string filePath)
         {
             try
             {
@@ -48,8 +57,7 @@ namespace EngLearningApp
             return text.ToString();
         }
 
-
-        public string readTxtToString(string filePath)
+        private string readTxt(string filePath)
         {
             try
             {
@@ -61,6 +69,14 @@ namespace EngLearningApp
                 log.error(e);
                 throw;
             }
+        }
+
+        private bool isPdf(string path)
+        {
+            path = path.ToLower().Trim();
+            if (path.Length > 3 && path.Substring(path.Length - 3, 3).Equals("pdf"))
+                return true;
+            else return false;
         }
 
 

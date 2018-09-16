@@ -31,7 +31,7 @@ namespace EngLearningApp
 
             wordsFromDatabase = new Database().initializeInMemoryList();
 
-
+            new FileReader().read(filePath);
 
         }
         #endregion
@@ -96,7 +96,7 @@ namespace EngLearningApp
             FileReader fileReader = new FileReader();
             StringToList textFormatter = new StringToList();
 
-            string fullText = fileReader.readTxtToString(filePath);
+            string fullText = fileReader.read(filePath);
             wordsFromFile = textFormatter.getList(fullText, wordsFromDatabase);
 
             //Translator d = new Translator();
