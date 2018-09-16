@@ -103,6 +103,8 @@ namespace EngLearningApp
             //wordDirectory = d.getDirectory(wordSet);
             #endregion
 
+            message("File reading is successfull...");
+
         }
 
         private void btl_Questioner_Click(object sender, EventArgs e)
@@ -113,6 +115,7 @@ namespace EngLearningApp
             panelWelcome.Visible = false;
             panelShowUnKnownList.Visible = false;
             panelQuestioner.Visible = true;
+            message("Questions started...");
         }
 
         private void btl_NewWords_Click(object sender, EventArgs e)
@@ -183,6 +186,7 @@ namespace EngLearningApp
         {
             new Database().saveData(questioner.getNewWords());
             questioner.setNewWordsAnEmptyList();
+            message("Words is saved...");
         }
         #endregion
 
@@ -221,6 +225,13 @@ namespace EngLearningApp
                         break;
                 }
             }
+        }
+        #endregion
+
+        #region Private methods
+        public void message(string message)
+        {
+            lbMessage.Text = message;
         }
         #endregion
 

@@ -52,9 +52,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.lbMessage = new System.Windows.Forms.Label();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
+            this.pLogPanel.SuspendLayout();
             this.pTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).BeginInit();
             this.panelWelcome.SuspendLayout();
@@ -70,7 +72,7 @@
             this.panelShowUnKnownList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelShowUnKnownList.Location = new System.Drawing.Point(188, 34);
             this.panelShowUnKnownList.Name = "panelShowUnKnownList";
-            this.panelShowUnKnownList.Size = new System.Drawing.Size(667, 382);
+            this.panelShowUnKnownList.Size = new System.Drawing.Size(667, 455);
             this.panelShowUnKnownList.TabIndex = 5;
             this.panelShowUnKnownList.Visible = false;
             // 
@@ -96,7 +98,7 @@
             this.panelQuestioner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQuestioner.Location = new System.Drawing.Point(188, 34);
             this.panelQuestioner.Name = "panelQuestioner";
-            this.panelQuestioner.Size = new System.Drawing.Size(667, 382);
+            this.panelQuestioner.Size = new System.Drawing.Size(667, 455);
             this.panelQuestioner.TabIndex = 6;
             this.panelQuestioner.Visible = false;
             // 
@@ -287,10 +289,11 @@
             // 
             // pLogPanel
             // 
+            this.pLogPanel.Controls.Add(this.lbMessage);
             this.pLogPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pLogPanel.Location = new System.Drawing.Point(188, 416);
+            this.pLogPanel.Location = new System.Drawing.Point(188, 489);
             this.pLogPanel.Name = "pLogPanel";
-            this.pLogPanel.Size = new System.Drawing.Size(667, 100);
+            this.pLogPanel.Size = new System.Drawing.Size(667, 27);
             this.pLogPanel.TabIndex = 8;
             // 
             // pTopPanel
@@ -366,8 +369,18 @@
             this.panelWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelWelcome.Location = new System.Drawing.Point(188, 34);
             this.panelWelcome.Name = "panelWelcome";
-            this.panelWelcome.Size = new System.Drawing.Size(667, 382);
+            this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
+            // 
+            // lbMessage
+            // 
+            this.lbMessage.AutoSize = true;
+            this.lbMessage.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbMessage.Location = new System.Drawing.Point(609, 0);
+            this.lbMessage.Name = "lbMessage";
+            this.lbMessage.Size = new System.Drawing.Size(58, 21);
+            this.lbMessage.TabIndex = 10;
+            this.lbMessage.Text = "            ";
             // 
             // Form1
             // 
@@ -391,6 +404,8 @@
             this.panelQuestioner.ResumeLayout(false);
             this.panelQuestioner.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
+            this.pLogPanel.ResumeLayout(false);
+            this.pLogPanel.PerformLayout();
             this.pTopPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).EndInit();
             this.panelWelcome.ResumeLayout(false);
@@ -423,6 +438,7 @@
         private System.Windows.Forms.PictureBox pictureBox_WelcomeRocket;
         private System.Windows.Forms.Panel panelWelcome;
         private System.Windows.Forms.TextBox tbEnglishWord;
+        private System.Windows.Forms.Label lbMessage;
     }
 }
 
