@@ -150,25 +150,30 @@ namespace EngLearningApp
 
         #region Panel: Questioner
 
+        #region Colored button
         private void btGreen_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(model.KnownColor.Green);
-            questioner.questionTheNextWord(wordsFromFile);
-        }
-
+            askAWord(model.KnownColor.Green);
+        }        
 
         private void btYellow_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(model.KnownColor.Yellow);
-            questioner.questionTheNextWord(wordsFromFile);
+            askAWord(model.KnownColor.Yellow);
         }
 
         private void btRed_Click(object sender, EventArgs e)
         {
-            questioner.addWordToNewWordsList(model.KnownColor.Red);
-            questioner.questionTheNextWord(wordsFromFile);
+            askAWord(model.KnownColor.Red);
         }
 
+        private void askAWord(model.KnownColor color)
+        {
+            questioner.addWordToNewWordsList(color);
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+        #endregion
+
+        #region Save button
         private void btSaveWordsToDatabase_Click(object sender, EventArgs e)
         {
             saveData();
@@ -179,11 +184,15 @@ namespace EngLearningApp
             new Database().saveData(questioner.getNewWords());
             questioner.setNewWordsAnEmptyList();
         }
+        #endregion
 
+        #region Question textbox
         private void tbEnglishWord_TextChanged(object sender, EventArgs e)
         {
             questioner.setQuestionedWord(tbEnglishWord.Text);
         }
+        #endregion
+
         #endregion
 
 
