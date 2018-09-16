@@ -220,6 +220,11 @@ namespace EngLearningApp
             Process.Start(url);
         }
 
+        private void bt_NwB_AddHungarian_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
 
@@ -256,6 +261,7 @@ namespace EngLearningApp
         {
             lbMessage.Text = message;
         }
+
 
         #endregion
 
