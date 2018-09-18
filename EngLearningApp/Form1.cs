@@ -131,7 +131,7 @@ namespace EngLearningApp
         {
             rtb_ShowWords.Text = "";
 #warning fix it newRedWords find good place
-            var newRedWords = questioner.getNewWords().Where(x => x.knowledgeLevel == model.KnownColor.Red|| x.knowledgeLevel == model.KnownColor.Yellow).Select(x => x.english);
+            var newRedWords = newWords.Where(x => x.knowledgeLevel == model.KnownColor.Red|| x.knowledgeLevel == model.KnownColor.Yellow).Select(x => x.english);
             foreach (var word in newRedWords)
             {
                 rtb_ShowWords.Text += word + "\n";
@@ -193,7 +193,7 @@ namespace EngLearningApp
 
         private void saveData()
         {
-            new Database().saveData(questioner.getNewWords());
+            new Database().saveData(newWords);
             questioner.setNewWordsAnEmptyList();
             message("Words is saved...");
         }
@@ -239,7 +239,7 @@ namespace EngLearningApp
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            if (!questioner.getNewWordsIsEmpty())//new words not empty
+            if (newWords.Count != 0)//new words not empty
             {
                 // Confirm user wants to close
                 switch (MessageBox.Show(this, "Save new words?", "Closing", MessageBoxButtons.YesNoCancel))

@@ -25,16 +25,7 @@ namespace EngLearningApp.service
         #endregion
 
         #region Getters/Setters
-        public List<Word> getNewWords()
-        {
-            return newWords;
-        }
-
-        public bool getNewWordsIsEmpty()
-        {
-            return newWords.Count == 0;
-        }
-
+        
         public void setNewWordsAnEmptyList()
         {
             newWords = new List<Word>();
