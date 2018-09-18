@@ -10,12 +10,12 @@ namespace EngLearningApp
         public static string EngToHun(string eng)
         {
             eng = "about";
-            string htmlPath_Front= @"http://www.szotar.sztaki.hu/search?searchWord=";
-            string htmlPath_End = @"&fromlang=eng&tolang=hun&outLanguage=hun";
+            string htmlPath_Front= @"http://www.lingvozone.com/main.jsp?action=translation&do=dictionary&language_id_from=23&language_id_to=9&word=";
+            string htmlPath_End = @"&t.x=21&t.y=9";
             string fullPath = htmlPath_Front + eng + htmlPath_End;
             
             //string xpath = "//*[@id='searchresults']/div[2]/div/div/div[2]/ol/li/div[2]/ol[1]/li/div/a";
-              string xpath = "//*[@id='searchresults']/div[2]/div/div/div[2]/ol/li/div[2]";
+              string xpath = "/html/body/table[1]/tbody/tr[2]/td[1]/table[1]/tbody/tr[2]/td[2]/a[1]";
             //xpath = "//*[@id='result_box']/span";
             string hun="";
 

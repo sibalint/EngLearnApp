@@ -2,9 +2,10 @@
 {
     public enum KnownColor
     {
-        Green,  //I really know this word
-        Yellow, //I don't really know this word
-        Red     //This is a totally new word for me
+        Green, //User know this word
+        Red,   //User don't know this word
+        Black  //Not words: Names, and others
+        
     }
 
     public class Word

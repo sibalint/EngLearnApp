@@ -203,7 +203,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(373, 188);
+            this.button4.Location = new System.Drawing.Point(270, 188);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 46);
             this.button4.TabIndex = 7;
@@ -214,16 +214,16 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkOrange;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(270, 188);
+            this.button3.Location = new System.Drawing.Point(373, 188);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 46);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Don\'t know Really";
+            this.button3.Text = "Ignore";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.btYellow_Click);
@@ -452,9 +452,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(855, 516);
+            this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.panelShowUnKnownList);
             this.Controls.Add(this.panelWelcome);
-            this.Controls.Add(this.panelQuestioner);
             this.Controls.Add(this.pLogPanel);
             this.Controls.Add(this.pLeftButtonPanel);
             this.Controls.Add(this.pTopPanel);
