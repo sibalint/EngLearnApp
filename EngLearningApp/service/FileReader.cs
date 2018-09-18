@@ -12,7 +12,7 @@ namespace EngLearningApp
     {
         private Logger log = new Logger();
         private string path = Properties.Settings.Default.path;
-        private bool isNewFile = true;
+        public bool isNewFile = true; //TODO: fix it private
 
         public void setPath(string path)
         {

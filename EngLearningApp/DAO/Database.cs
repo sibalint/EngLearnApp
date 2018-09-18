@@ -95,9 +95,10 @@ namespace EngLearningApp.DAO
         private void updateKnowledge(string eng, string color)
         {
             command = new SQLiteCommand(dbConnection);
-            command.CommandText = "UPDATE Words SET color='@color' WHERE eng= '@eng'";
+            command.CommandText = "UPDATE Words SET color=@color WHERE eng= @eng";
             command.Parameters.AddWithValue("@eng", eng);
             command.Parameters.AddWithValue("@color", color);
+            command.ExecuteNonQuery();
         }
         
 

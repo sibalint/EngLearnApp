@@ -193,7 +193,7 @@ namespace EngLearningApp
 
         private void saveData()
         {
-            new Database().saveData(newWords);
+            new Database().saveData(questioner.getNewWords());
             questioner.setNewWordsAnEmptyList();
             message("Words is saved...");
         }
@@ -223,7 +223,9 @@ namespace EngLearningApp
 
         private void bt_NwB_KnowledgeChecking_Click(object sender, EventArgs e)
         {
-
+            wordsFromFile = wordsFromDatabase.Where(w => w.knowledgeLevel == model.KnownColor.Red || w.knowledgeLevel == model.KnownColor.Yellow).Select(s => s.english).OrderBy(o=>o).ToList();
+            questioner.questionTheNextWord(wordsFromFile);
+            fileReader.isNewFile = false;
         }
 
         #endregion
