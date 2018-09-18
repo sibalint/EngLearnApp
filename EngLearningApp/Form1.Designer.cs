@@ -32,7 +32,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelShowUnKnownList = new System.Windows.Forms.Panel();
             this.panelShowUnKnownListBottomPanel = new System.Windows.Forms.Panel();
-            this.bt_NwB_AddHungarian = new System.Windows.Forms.Button();
+            this.bt_NwB_KnowledgeChecking = new System.Windows.Forms.Button();
             this.bt_NwB_Copy = new System.Windows.Forms.Button();
             this.bt_NwB_openWeb = new System.Windows.Forms.Button();
             this.rtb_ShowWords = new System.Windows.Forms.RichTextBox();
@@ -84,7 +84,7 @@
             // 
             // panelShowUnKnownListBottomPanel
             // 
-            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_AddHungarian);
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_KnowledgeChecking);
             this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_Copy);
             this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_openWeb);
             this.panelShowUnKnownListBottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -93,21 +93,21 @@
             this.panelShowUnKnownListBottomPanel.Size = new System.Drawing.Size(667, 27);
             this.panelShowUnKnownListBottomPanel.TabIndex = 9;
             // 
-            // bt_NwB_AddHungarian
+            // bt_NwB_KnowledgeChecking
             // 
-            this.bt_NwB_AddHungarian.FlatAppearance.BorderSize = 0;
-            this.bt_NwB_AddHungarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_NwB_AddHungarian.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bt_NwB_AddHungarian.ForeColor = System.Drawing.Color.White;
-            this.bt_NwB_AddHungarian.Location = new System.Drawing.Point(3, 3);
-            this.bt_NwB_AddHungarian.Name = "bt_NwB_AddHungarian";
-            this.bt_NwB_AddHungarian.Size = new System.Drawing.Size(148, 24);
-            this.bt_NwB_AddHungarian.TabIndex = 4;
-            this.bt_NwB_AddHungarian.Text = "Add Hungarian Words";
-            this.bt_NwB_AddHungarian.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bt_NwB_AddHungarian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bt_NwB_AddHungarian.UseVisualStyleBackColor = true;
-            this.bt_NwB_AddHungarian.Click += new System.EventHandler(this.bt_NwB_AddHungarian_Click);
+            this.bt_NwB_KnowledgeChecking.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_KnowledgeChecking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_KnowledgeChecking.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_KnowledgeChecking.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_KnowledgeChecking.Location = new System.Drawing.Point(3, 3);
+            this.bt_NwB_KnowledgeChecking.Name = "bt_NwB_KnowledgeChecking";
+            this.bt_NwB_KnowledgeChecking.Size = new System.Drawing.Size(148, 24);
+            this.bt_NwB_KnowledgeChecking.TabIndex = 4;
+            this.bt_NwB_KnowledgeChecking.Text = "Knowledge checking";
+            this.bt_NwB_KnowledgeChecking.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_KnowledgeChecking.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_KnowledgeChecking.UseVisualStyleBackColor = true;
+            this.bt_NwB_KnowledgeChecking.Click += new System.EventHandler(this.bt_NwB_KnowledgeChecking_Click);
             // 
             // bt_NwB_Copy
             // 
@@ -508,7 +508,7 @@
         private System.Windows.Forms.Panel panelShowUnKnownListBottomPanel;
         private System.Windows.Forms.Button bt_NwB_Copy;
         private System.Windows.Forms.Button bt_NwB_openWeb;
-        private System.Windows.Forms.Button bt_NwB_AddHungarian;
+        private System.Windows.Forms.Button bt_NwB_KnowledgeChecking;
     }
 }
 

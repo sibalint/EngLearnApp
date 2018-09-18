@@ -220,7 +220,7 @@ namespace EngLearningApp
             Process.Start(url);
         }
 
-        private void bt_NwB_AddHungarian_Click(object sender, EventArgs e)
+        private void bt_NwB_KnowledgeChecking_Click(object sender, EventArgs e)
         {
 
         }
