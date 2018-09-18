@@ -83,7 +83,7 @@ namespace EngLearningApp.DAO
             return reader.HasRows;
         }
 
-        public List<Word> getWords()
+        private List<Word> getWords()
         {
             List<Word> words = new List<Word>();
             
