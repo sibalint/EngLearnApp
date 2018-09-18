@@ -16,11 +16,11 @@ namespace EngLearningApp.service
         #endregion
 
         #region Constructor
-        public Questioner(Label lbWordsCount, TextBox tbEnglishWord)
+        public Questioner(List<Word> newWords, Label lbWordsCount, TextBox tbEnglishWord)
         {
             this.lbWordsCount = lbWordsCount;
             this.tbEnglishWord = tbEnglishWord;
-            newWords = new List<Word>();
+            this.newWords = newWords;
         }
         #endregion
 

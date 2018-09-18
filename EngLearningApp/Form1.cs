@@ -15,6 +15,7 @@ namespace EngLearningApp
     {
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordsFromDatabase = new List<Word>();
+        private List<Word> newWords = new List<Word>();
 
         private FileReader fileReader;
         private StringToList textFormatter;
@@ -28,7 +29,7 @@ namespace EngLearningApp
             
             fileReader = new FileReader();
             textFormatter = new StringToList();
-            questioner = new Questioner(lbWordsCount, tbEnglishWord);
+            questioner = new Questioner(newWords, lbWordsCount, tbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
             
