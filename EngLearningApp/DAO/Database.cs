@@ -12,6 +12,7 @@ namespace EngLearningApp.DAO
         SQLiteConnection dbConnection;
         SQLiteCommand command;
 
+        #region Public method
         public List<Word> initializeInMemoryList()
         {
             try { 
@@ -47,8 +48,9 @@ namespace EngLearningApp.DAO
             }
             
         }
+        #endregion
 
-
+        #region Private methods
         private void init()
         {
             dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
@@ -113,6 +115,6 @@ namespace EngLearningApp.DAO
 
             return words;
         }
-
+        #endregion
     }
 }
