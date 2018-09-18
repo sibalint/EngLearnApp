@@ -48,6 +48,16 @@ namespace EngLearningApp.DAO
             }
             
         }
+
+        public void updateKnowledge(string eng, KnownColor color)
+        {
+            init();
+            command = new SQLiteCommand(dbConnection);
+            command.CommandText = "UPDATE Words SET color='@color' WHERE eng= '@eng'";
+            command.Parameters.AddWithValue("@eng", eng);
+            command.Parameters.AddWithValue("@color", color.ToString());
+            close();
+        }
         #endregion
 
         #region Private methods
