@@ -49,14 +49,31 @@ namespace EngLearningApp.DAO
             
         }
 
-        public void updateKnowledge(string eng, KnownColor color)
+        public void updateKnowledge(List<Word> newWords)
         {
-            init();
+            try
+            {
+                init();
+                foreach (var word in newWords)
+                {
+                    updateWordKnowledge(word.english, word.knowledgeLevel.ToString());
+                }
+                close();
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show("ERROR: Saving is failed!");
+                log.error(e);
+
+            }
+        }
+
+        private void updateWordKnowledge(string eng, string color)
+        {
             command = new SQLiteCommand(dbConnection);
             command.CommandText = "UPDATE Words SET color='@color' WHERE eng= '@eng'";
             command.Parameters.AddWithValue("@eng", eng);
-            command.Parameters.AddWithValue("@color", color.ToString());
-            close();
+            command.Parameters.AddWithValue("@color", color);
         }
         #endregion
 
