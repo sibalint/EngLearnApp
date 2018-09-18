@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelShowUnKnownList = new System.Windows.Forms.Panel();
+            this.panelShowUnKnownListBottomPanel = new System.Windows.Forms.Panel();
+            this.bt_NwB_AddHungarian = new System.Windows.Forms.Button();
+            this.bt_NwB_Copy = new System.Windows.Forms.Button();
+            this.bt_NwB_openWeb = new System.Windows.Forms.Button();
             this.rtb_ShowWords = new System.Windows.Forms.RichTextBox();
             this.panelQuestioner = new System.Windows.Forms.Panel();
             this.tbEnglishWord = new System.Windows.Forms.TextBox();
@@ -53,18 +57,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.panelShowUnKnownListBottomPanel = new System.Windows.Forms.Panel();
-            this.bt_NwB_openWeb = new System.Windows.Forms.Button();
-            this.bt_NwB_Copy = new System.Windows.Forms.Button();
-            this.bt_NwB_AddHungarian = new System.Windows.Forms.Button();
             this.panelShowUnKnownList.SuspendLayout();
+            this.panelShowUnKnownListBottomPanel.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
             this.pLeftButtonPanel.SuspendLayout();
             this.pLogPanel.SuspendLayout();
             this.pTopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).BeginInit();
             this.panelWelcome.SuspendLayout();
-            this.panelShowUnKnownListBottomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -81,6 +81,65 @@
             this.panelShowUnKnownList.Size = new System.Drawing.Size(667, 455);
             this.panelShowUnKnownList.TabIndex = 5;
             this.panelShowUnKnownList.Visible = false;
+            // 
+            // panelShowUnKnownListBottomPanel
+            // 
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_AddHungarian);
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_Copy);
+            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_openWeb);
+            this.panelShowUnKnownListBottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelShowUnKnownListBottomPanel.Location = new System.Drawing.Point(0, 428);
+            this.panelShowUnKnownListBottomPanel.Name = "panelShowUnKnownListBottomPanel";
+            this.panelShowUnKnownListBottomPanel.Size = new System.Drawing.Size(667, 27);
+            this.panelShowUnKnownListBottomPanel.TabIndex = 9;
+            // 
+            // bt_NwB_AddHungarian
+            // 
+            this.bt_NwB_AddHungarian.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_AddHungarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_AddHungarian.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_AddHungarian.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_AddHungarian.Location = new System.Drawing.Point(3, 3);
+            this.bt_NwB_AddHungarian.Name = "bt_NwB_AddHungarian";
+            this.bt_NwB_AddHungarian.Size = new System.Drawing.Size(148, 24);
+            this.bt_NwB_AddHungarian.TabIndex = 4;
+            this.bt_NwB_AddHungarian.Text = "Add Hungarian Words";
+            this.bt_NwB_AddHungarian.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_AddHungarian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_AddHungarian.UseVisualStyleBackColor = true;
+            this.bt_NwB_AddHungarian.Click += new System.EventHandler(this.bt_NwB_AddHungarian_Click);
+            // 
+            // bt_NwB_Copy
+            // 
+            this.bt_NwB_Copy.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_Copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_Copy.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_Copy.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_Copy.Location = new System.Drawing.Point(452, 0);
+            this.bt_NwB_Copy.Name = "bt_NwB_Copy";
+            this.bt_NwB_Copy.Size = new System.Drawing.Size(79, 24);
+            this.bt_NwB_Copy.TabIndex = 3;
+            this.bt_NwB_Copy.Text = "Copy";
+            this.bt_NwB_Copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_Copy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_Copy.UseVisualStyleBackColor = true;
+            this.bt_NwB_Copy.Click += new System.EventHandler(this.bt_NwB_Copy_Click);
+            // 
+            // bt_NwB_openWeb
+            // 
+            this.bt_NwB_openWeb.FlatAppearance.BorderSize = 0;
+            this.bt_NwB_openWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_NwB_openWeb.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bt_NwB_openWeb.ForeColor = System.Drawing.Color.White;
+            this.bt_NwB_openWeb.Location = new System.Drawing.Point(537, 0);
+            this.bt_NwB_openWeb.Name = "bt_NwB_openWeb";
+            this.bt_NwB_openWeb.Size = new System.Drawing.Size(128, 24);
+            this.bt_NwB_openWeb.TabIndex = 2;
+            this.bt_NwB_openWeb.Text = "Open Google Translator";
+            this.bt_NwB_openWeb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bt_NwB_openWeb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bt_NwB_openWeb.UseVisualStyleBackColor = true;
+            this.bt_NwB_openWeb.Click += new System.EventHandler(this.bt_NwB_openWeb_Click);
             // 
             // rtb_ShowWords
             // 
@@ -388,65 +447,6 @@
             this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
             // 
-            // panelShowUnKnownListBottomPanel
-            // 
-            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_AddHungarian);
-            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_Copy);
-            this.panelShowUnKnownListBottomPanel.Controls.Add(this.bt_NwB_openWeb);
-            this.panelShowUnKnownListBottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelShowUnKnownListBottomPanel.Location = new System.Drawing.Point(0, 428);
-            this.panelShowUnKnownListBottomPanel.Name = "panelShowUnKnownListBottomPanel";
-            this.panelShowUnKnownListBottomPanel.Size = new System.Drawing.Size(667, 27);
-            this.panelShowUnKnownListBottomPanel.TabIndex = 9;
-            // 
-            // bt_NwB_openWeb
-            // 
-            this.bt_NwB_openWeb.FlatAppearance.BorderSize = 0;
-            this.bt_NwB_openWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_NwB_openWeb.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bt_NwB_openWeb.ForeColor = System.Drawing.Color.White;
-            this.bt_NwB_openWeb.Location = new System.Drawing.Point(537, 0);
-            this.bt_NwB_openWeb.Name = "bt_NwB_openWeb";
-            this.bt_NwB_openWeb.Size = new System.Drawing.Size(128, 24);
-            this.bt_NwB_openWeb.TabIndex = 2;
-            this.bt_NwB_openWeb.Text = "Open Google Translator";
-            this.bt_NwB_openWeb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bt_NwB_openWeb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bt_NwB_openWeb.UseVisualStyleBackColor = true;
-            this.bt_NwB_openWeb.Click += new System.EventHandler(this.bt_NwB_openWeb_Click);
-            // 
-            // bt_NwB_Copy
-            // 
-            this.bt_NwB_Copy.FlatAppearance.BorderSize = 0;
-            this.bt_NwB_Copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_NwB_Copy.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bt_NwB_Copy.ForeColor = System.Drawing.Color.White;
-            this.bt_NwB_Copy.Location = new System.Drawing.Point(452, 0);
-            this.bt_NwB_Copy.Name = "bt_NwB_Copy";
-            this.bt_NwB_Copy.Size = new System.Drawing.Size(79, 24);
-            this.bt_NwB_Copy.TabIndex = 3;
-            this.bt_NwB_Copy.Text = "Copy";
-            this.bt_NwB_Copy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bt_NwB_Copy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bt_NwB_Copy.UseVisualStyleBackColor = true;
-            this.bt_NwB_Copy.Click += new System.EventHandler(this.bt_NwB_Copy_Click);
-            // 
-            // bt_NwB_AddHungarian
-            // 
-            this.bt_NwB_AddHungarian.FlatAppearance.BorderSize = 0;
-            this.bt_NwB_AddHungarian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_NwB_AddHungarian.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bt_NwB_AddHungarian.ForeColor = System.Drawing.Color.White;
-            this.bt_NwB_AddHungarian.Location = new System.Drawing.Point(3, 3);
-            this.bt_NwB_AddHungarian.Name = "bt_NwB_AddHungarian";
-            this.bt_NwB_AddHungarian.Size = new System.Drawing.Size(148, 24);
-            this.bt_NwB_AddHungarian.TabIndex = 4;
-            this.bt_NwB_AddHungarian.Text = "Add Hungarian Words";
-            this.bt_NwB_AddHungarian.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bt_NwB_AddHungarian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bt_NwB_AddHungarian.UseVisualStyleBackColor = true;
-            this.bt_NwB_AddHungarian.Click += new System.EventHandler(this.bt_NwB_AddHungarian_Click);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -466,6 +466,7 @@
             this.Tag = "git";
             this.Text = "English Word App";
             this.panelShowUnKnownList.ResumeLayout(false);
+            this.panelShowUnKnownListBottomPanel.ResumeLayout(false);
             this.panelQuestioner.ResumeLayout(false);
             this.panelQuestioner.PerformLayout();
             this.pLeftButtonPanel.ResumeLayout(false);
@@ -475,7 +476,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_WelcomeRocket)).EndInit();
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
-            this.panelShowUnKnownListBottomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
