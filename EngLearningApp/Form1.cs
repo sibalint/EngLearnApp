@@ -29,7 +29,7 @@ namespace EngLearningApp
             
             fileReader = new FileReader();
             textFormatter = new StringToList();
-            questioner = new Questioner(newWords, lbWordsCount, tbEnglishWord);
+            questioner = new Questioner(lbWordsCount, tbEnglishWord);
 
             wordsFromDatabase = new Database().initializeInMemoryList();
             
