@@ -36,7 +36,15 @@ namespace EngLearningApp.DAO
                 init();
                 foreach (var word in newWords)
                 {
-                    insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
+                    if (!containsThisKey(word.english))
+                    {
+                        insertWord(word.english, word.hungarian, word.knowledgeLevel.ToString());
+                    }
+                    else
+                    {
+                        updateKnowledge(word.english, word.knowledgeLevel.ToString());
+                    }
+
                 }
                 close();
             }
@@ -49,32 +57,7 @@ namespace EngLearningApp.DAO
             
         }
 
-        public void updateKnowledge(List<Word> newWords)
-        {
-            try
-            {
-                init();
-                foreach (var word in newWords)
-                {
-                    updateWordKnowledge(word.english, word.knowledgeLevel.ToString());
-                }
-                close();
-            }
-            catch (System.Exception e)
-            {
-                MessageBox.Show("ERROR: Saving is failed!");
-                log.error(e);
-
-            }
-        }
-
-        private void updateWordKnowledge(string eng, string color)
-        {
-            command = new SQLiteCommand(dbConnection);
-            command.CommandText = "UPDATE Words SET color='@color' WHERE eng= '@eng'";
-            command.Parameters.AddWithValue("@eng", eng);
-            command.Parameters.AddWithValue("@color", color);
-        }
+        
         #endregion
 
         #region Private methods
@@ -88,20 +71,7 @@ namespace EngLearningApp.DAO
         {
             dbConnection.Close();
         }
-        
 
-        private void insertWord(string eng, string hun, string knowledgeColor)
-        {
-            if (!containsThisKey(eng))
-            {
-                command = new SQLiteCommand(dbConnection);
-                command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
-                command.Parameters.AddWithValue("@eng", eng);
-                command.Parameters.AddWithValue("@hun", hun);
-                command.Parameters.AddWithValue("@color", knowledgeColor);
-                command.ExecuteNonQuery();
-            }
-        }
 
         private bool containsThisKey(string eng)
         {
@@ -111,6 +81,25 @@ namespace EngLearningApp.DAO
             SQLiteDataReader reader = command.ExecuteReader();
             return reader.HasRows;
         }
+
+        private void insertWord(string eng, string hun, string knowledgeColor)
+        {            
+                command = new SQLiteCommand(dbConnection);
+                command.CommandText = "INSERT INTO Words (eng, hun, color) VALUES (@eng, @hun, @color)";
+                command.Parameters.AddWithValue("@eng", eng);
+                command.Parameters.AddWithValue("@hun", hun);
+                command.Parameters.AddWithValue("@color", knowledgeColor);
+                command.ExecuteNonQuery();
+        }
+
+        private void updateKnowledge(string eng, string color)
+        {
+            command = new SQLiteCommand(dbConnection);
+            command.CommandText = "UPDATE Words SET color='@color' WHERE eng= '@eng'";
+            command.Parameters.AddWithValue("@eng", eng);
+            command.Parameters.AddWithValue("@color", color);
+        }
+        
 
         private List<Word> getWords()
         {
