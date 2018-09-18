@@ -16,16 +16,25 @@ namespace EngLearningApp.service
         #endregion
 
         #region Constructor
-        public Questioner(List<Word> newWords, Label lbWordsCount, TextBox tbEnglishWord)
+        public Questioner(Label lbWordsCount, TextBox tbEnglishWord)
         {
             this.lbWordsCount = lbWordsCount;
             this.tbEnglishWord = tbEnglishWord;
-            this.newWords = newWords;
+            this.newWords = new List<Word>();
         }
         #endregion
 
         #region Getters/Setters
-        
+        public List<Word> getNewWords()
+        {
+            return newWords;
+        }
+
+        public bool getNewWordsIsEmpty()
+        {
+            return newWords.Count == 0;
+        }
+
         public void setNewWordsAnEmptyList()
         {
             newWords = new List<Word>();
@@ -37,7 +46,7 @@ namespace EngLearningApp.service
         }
         #endregion        
 
-        public string questionTheNextWord( List<string> wordsFromFile)
+        public string questionTheNextWord(List<string> wordsFromFile)
         {
             lbWordsCount.Text = wordsFromFile.Count() + " words left";
             questionedWord = wordsFromFile.FirstOrDefault();
