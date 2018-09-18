@@ -18,6 +18,10 @@
             text = text.Replace(";", "");
             text = text.Replace(":", "");
             text = text.Replace("\r", "");
+            
+            text = text.Replace("</", " ");
+            text = text.Replace("<", "");
+            text = text.Replace(">", " ");
 
             //trim - chars
             text = text.Replace(" -", " ");
