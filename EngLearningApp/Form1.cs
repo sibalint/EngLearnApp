@@ -130,7 +130,7 @@ namespace EngLearningApp
         {
             rtb_ShowWords.Text = "";
 #warning fix it newRedWords find good place
-            var newRedWords = questioner.getNewWords().Where(x => x.knowledgeLevel == model.KnownColor.Red).Select(x => x.english);
+            var newRedWords = questioner.getNewWords().Where(x => x.knowledgeLevel == model.KnownColor.Red|| x.knowledgeLevel == model.KnownColor.Yellow).Select(x => x.english);
             foreach (var word in newRedWords)
             {
                 rtb_ShowWords.Text += word + "\n";
@@ -143,7 +143,7 @@ namespace EngLearningApp
         private void btl_OldWords_Click(object sender, EventArgs e)
         {
             rtb_ShowWords.Text = "";
-            foreach (var word in wordsFromDatabase.Where(x=> x.knowledgeLevel== model.KnownColor.Red))
+            foreach (var word in wordsFromDatabase.Where(x=> x.knowledgeLevel == model.KnownColor.Red || x.knowledgeLevel == model.KnownColor.Yellow))
             {
                 rtb_ShowWords.Text += word.english + "\n";
             }
