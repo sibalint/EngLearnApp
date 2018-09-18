@@ -178,6 +178,11 @@ namespace EngLearningApp
             askAWord(model.KnownColor.Red);
         }
 
+        private void btNext_Click(object sender, EventArgs e)
+        {
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+
         private void askAWord(model.KnownColor color)
         {
             questioner.addWordToNewWordsList(color);
@@ -266,8 +271,8 @@ namespace EngLearningApp
         }
 
 
+
         #endregion
 
-        
     }
 }

@@ -172,6 +172,7 @@
     <Content Include="sources\images\maximize.png" />
     <Content Include="sources\images\minimize.png" />
     <Content Include="sources\images\new.png" />
+    <Content Include="sources\images\next.png" />
     <Content Include="sources\images\old.png" />
     <Content Include="sources\images\open.png" />
     <Content Include="sources\images\questioner.png" />

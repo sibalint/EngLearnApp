@@ -57,6 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
+            this.btNext = new System.Windows.Forms.Button();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelShowUnKnownListBottomPanel.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
@@ -154,6 +155,7 @@
             // 
             // panelQuestioner
             // 
+            this.panelQuestioner.Controls.Add(this.btNext);
             this.panelQuestioner.Controls.Add(this.tbEnglishWord);
             this.panelQuestioner.Controls.Add(this.btSaveWordsToDatabase);
             this.panelQuestioner.Controls.Add(this.button4);
@@ -447,6 +449,23 @@
             this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
             // 
+            // btNext
+            // 
+            this.btNext.FlatAppearance.BorderSize = 0;
+            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNext.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btNext.ForeColor = System.Drawing.Color.White;
+            this.btNext.Image = global::EngLearningApp.Properties.Resources.next1;
+            this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNext.Location = new System.Drawing.Point(476, 188);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(63, 46);
+            this.btNext.TabIndex = 10;
+            this.btNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -509,6 +528,7 @@
         private System.Windows.Forms.Button bt_NwB_Copy;
         private System.Windows.Forms.Button bt_NwB_openWeb;
         private System.Windows.Forms.Button bt_NwB_KnowledgeChecking;
+        private System.Windows.Forms.Button btNext;
     }
 }
 
