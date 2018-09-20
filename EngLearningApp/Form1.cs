@@ -125,25 +125,23 @@ namespace EngLearningApp
 
         private void btl_NewWords_Click(object sender, EventArgs e)
         {
-            rtb_ShowWords.Text = "";
-#warning fix it newRedWords find good place
-            var newRedWords = questioner.getNewWords().Where(x => x.knowledgeLevel == model.KnownColor.Red).Select(x => x.english);
-            foreach (var word in newRedWords)
-            {
-                rtb_ShowWords.Text += word + "\n";
-            }
+            writeRedWords(wordsFromDatabase);
             visibility(false, true, false);
         }
 
         private void btl_OldWords_Click(object sender, EventArgs e)
         {
+            writeRedWords(wordsFromDatabase);
+            visibility(false, true, false);
+        }
+
+        private void writeRedWords(List<Word> words)
+        {
             rtb_ShowWords.Text = "";
-            foreach (var word in wordsFromDatabase.Where(x=> x.knowledgeLevel == model.KnownColor.Red))
+            foreach (var word in words.Where(x => x.knowledgeLevel == model.KnownColor.Red))
             {
                 rtb_ShowWords.Text += word.english + "\n";
             }
-
-            visibility(false, true, false);
         }
 
         private void btl_Settings_Click(object sender, EventArgs e)
