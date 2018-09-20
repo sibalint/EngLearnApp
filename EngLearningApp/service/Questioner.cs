@@ -59,7 +59,6 @@ namespace EngLearningApp.service
         public void addWordToNewWordsList(KnownColor color)
         {
             newWords.Add(new Word(questionedWord, "", color));
-#warning "here i need translate the word if i want use this function"
         }
     }
 }
