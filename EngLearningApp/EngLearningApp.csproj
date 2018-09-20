@@ -135,7 +135,6 @@
     </Compile>
     <Compile Include="service\Logger.cs" />
     <Compile Include="service\Questioner.cs" />
-    <Compile Include="service\Translator.cs" />
     <Compile Include="service\FileReader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

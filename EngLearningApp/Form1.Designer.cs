@@ -37,6 +37,7 @@
             this.bt_NwB_openWeb = new System.Windows.Forms.Button();
             this.rtb_ShowWords = new System.Windows.Forms.RichTextBox();
             this.panelQuestioner = new System.Windows.Forms.Panel();
+            this.btNext = new System.Windows.Forms.Button();
             this.tbEnglishWord = new System.Windows.Forms.TextBox();
             this.btSaveWordsToDatabase = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox_WelcomeRocket = new System.Windows.Forms.PictureBox();
             this.panelWelcome = new System.Windows.Forms.Panel();
-            this.btNext = new System.Windows.Forms.Button();
             this.panelShowUnKnownList.SuspendLayout();
             this.panelShowUnKnownListBottomPanel.SuspendLayout();
             this.panelQuestioner.SuspendLayout();
@@ -168,6 +168,23 @@
             this.panelQuestioner.TabIndex = 6;
             this.panelQuestioner.Visible = false;
             // 
+            // btNext
+            // 
+            this.btNext.FlatAppearance.BorderSize = 0;
+            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNext.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btNext.ForeColor = System.Drawing.Color.White;
+            this.btNext.Image = global::EngLearningApp.Properties.Resources.next1;
+            this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNext.Location = new System.Drawing.Point(476, 188);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(63, 46);
+            this.btNext.TabIndex = 10;
+            this.btNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            // 
             // tbEnglishWord
             // 
             this.tbEnglishWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -187,7 +204,7 @@
             this.btSaveWordsToDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSaveWordsToDatabase.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btSaveWordsToDatabase.ForeColor = System.Drawing.Color.White;
-            this.btSaveWordsToDatabase.Image = global::EngLearningApp.Properties.Resources.save;
+            this.btSaveWordsToDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btSaveWordsToDatabase.Image")));
             this.btSaveWordsToDatabase.Location = new System.Drawing.Point(537, 380);
             this.btSaveWordsToDatabase.Name = "btSaveWordsToDatabase";
             this.btSaveWordsToDatabase.Size = new System.Drawing.Size(127, 69);
@@ -274,7 +291,7 @@
             this.btl_NewWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_NewWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_NewWords.ForeColor = System.Drawing.Color.White;
-            this.btl_NewWords.Image = global::EngLearningApp.Properties.Resources._new;
+            this.btl_NewWords.Image = ((System.Drawing.Image)(resources.GetObject("btl_NewWords.Image")));
             this.btl_NewWords.Location = new System.Drawing.Point(3, 194);
             this.btl_NewWords.Name = "btl_NewWords";
             this.btl_NewWords.Size = new System.Drawing.Size(188, 88);
@@ -308,7 +325,7 @@
             this.btl_OldWords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_OldWords.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_OldWords.ForeColor = System.Drawing.Color.White;
-            this.btl_OldWords.Image = global::EngLearningApp.Properties.Resources.old;
+            this.btl_OldWords.Image = ((System.Drawing.Image)(resources.GetObject("btl_OldWords.Image")));
             this.btl_OldWords.Location = new System.Drawing.Point(3, 288);
             this.btl_OldWords.Name = "btl_OldWords";
             this.btl_OldWords.Size = new System.Drawing.Size(188, 88);
@@ -325,7 +342,7 @@
             this.btl_Questioner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_Questioner.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_Questioner.ForeColor = System.Drawing.Color.White;
-            this.btl_Questioner.Image = global::EngLearningApp.Properties.Resources.questioner;
+            this.btl_Questioner.Image = ((System.Drawing.Image)(resources.GetObject("btl_Questioner.Image")));
             this.btl_Questioner.Location = new System.Drawing.Point(3, 100);
             this.btl_Questioner.Name = "btl_Questioner";
             this.btl_Questioner.Size = new System.Drawing.Size(188, 88);
@@ -342,7 +359,7 @@
             this.btl_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btl_open.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btl_open.ForeColor = System.Drawing.Color.White;
-            this.btl_open.Image = global::EngLearningApp.Properties.Resources.open;
+            this.btl_open.Image = ((System.Drawing.Image)(resources.GetObject("btl_open.Image")));
             this.btl_open.Location = new System.Drawing.Point(3, 6);
             this.btl_open.Name = "btl_open";
             this.btl_open.Size = new System.Drawing.Size(188, 88);
@@ -392,7 +409,7 @@
             this.btt_Minimalize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btt_Minimalize.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btt_Minimalize.ForeColor = System.Drawing.Color.White;
-            this.btt_Minimalize.Image = global::EngLearningApp.Properties.Resources.minimize;
+            this.btt_Minimalize.Image = ((System.Drawing.Image)(resources.GetObject("btt_Minimalize.Image")));
             this.btt_Minimalize.Location = new System.Drawing.Point(791, 0);
             this.btt_Minimalize.Name = "btt_Minimalize";
             this.btt_Minimalize.Size = new System.Drawing.Size(29, 31);
@@ -408,7 +425,7 @@
             this.btt_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btt_close.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btt_close.ForeColor = System.Drawing.Color.White;
-            this.btt_close.Image = global::EngLearningApp.Properties.Resources.cancel;
+            this.btt_close.Image = ((System.Drawing.Image)(resources.GetObject("btt_close.Image")));
             this.btt_close.Location = new System.Drawing.Point(826, 0);
             this.btt_close.Name = "btt_close";
             this.btt_close.Size = new System.Drawing.Size(29, 31);
@@ -430,8 +447,8 @@
             // 
             // pictureBox_WelcomeRocket
             // 
-            this.pictureBox_WelcomeRocket.Image = global::EngLearningApp.Properties.Resources.Rocket;
-            this.pictureBox_WelcomeRocket.InitialImage = global::EngLearningApp.Properties.Resources.Rocket;
+            this.pictureBox_WelcomeRocket.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_WelcomeRocket.Image")));
+            this.pictureBox_WelcomeRocket.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_WelcomeRocket.InitialImage")));
             this.pictureBox_WelcomeRocket.Location = new System.Drawing.Point(249, 86);
             this.pictureBox_WelcomeRocket.Name = "pictureBox_WelcomeRocket";
             this.pictureBox_WelcomeRocket.Size = new System.Drawing.Size(146, 125);
@@ -448,23 +465,6 @@
             this.panelWelcome.Name = "panelWelcome";
             this.panelWelcome.Size = new System.Drawing.Size(667, 455);
             this.panelWelcome.TabIndex = 9;
-            // 
-            // btNext
-            // 
-            this.btNext.FlatAppearance.BorderSize = 0;
-            this.btNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNext.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btNext.ForeColor = System.Drawing.Color.White;
-            this.btNext.Image = global::EngLearningApp.Properties.Resources.next1;
-            this.btNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btNext.Location = new System.Drawing.Point(476, 188);
-            this.btNext.Name = "btNext";
-            this.btNext.Size = new System.Drawing.Size(63, 46);
-            this.btNext.TabIndex = 10;
-            this.btNext.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btNext.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btNext.UseVisualStyleBackColor = true;
-            this.btNext.Click += new System.EventHandler(this.btNext_Click);
             // 
             // Form1
             // 
