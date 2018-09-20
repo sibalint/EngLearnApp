@@ -125,7 +125,7 @@ namespace EngLearningApp
 
         private void btl_NewWords_Click(object sender, EventArgs e)
         {
-            writeRedWords(wordsFromDatabase);
+            writeRedWords(questioner.getNewWords());
             visibility(false, true, false);
         }
 
@@ -237,7 +237,7 @@ namespace EngLearningApp
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            if (questioner.getNewWordsIsEmpty())//new words not empty
+            if (!questioner.getNewWordsIsEmpty())//new words not empty
             {
                 // Confirm user wants to close
                 switch (MessageBox.Show(this, "Save new words?", "Closing", MessageBoxButtons.YesNoCancel))
