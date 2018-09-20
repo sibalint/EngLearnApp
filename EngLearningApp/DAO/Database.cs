@@ -15,17 +15,20 @@ namespace EngLearningApp.DAO
         #region Public method
         public List<Word> initializeInMemoryList()
         {
-            try { 
-            init();
-            var result = getWords();
-            close();
-            return result;
+            try
+            {
+                init();
+                return getWords();
             }
             catch (System.Exception e)
             {
                 MessageBox.Show("ERROR: Database connecting failed. Please restart the Application.");
                 log.error(e);
                 return null;
+            }
+            finally
+            {
+                close();
             }
         }
 
@@ -46,13 +49,17 @@ namespace EngLearningApp.DAO
                     }
 
                 }
-                close();
             }
             catch (System.Exception e)
             {
                 MessageBox.Show("ERROR: Saving is failed!");
                 log.error(e);
 
+            }
+            finally
+            {
+
+                close();
             }
             
         }
