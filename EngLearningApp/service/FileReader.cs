@@ -42,7 +42,15 @@ namespace EngLearningApp
                 return readPdf(path);
             else
                 return readTxt(path);
-        }        
+        }
+
+        private bool isPdf(string path)
+        {
+            path = path.ToLower().Trim();
+            if (path.Length > 3 && path.Substring(path.Length - 3, 3).Equals("pdf"))
+                return true;
+            else return false;
+        }
 
         private string readPdf(string filePath)
         {
@@ -93,15 +101,5 @@ namespace EngLearningApp
                 throw;
             }
         }
-
-        private bool isPdf(string path)
-        {
-            path = path.ToLower().Trim();
-            if (path.Length > 3 && path.Substring(path.Length - 3, 3).Equals("pdf"))
-                return true;
-            else return false;
-        }
-
-
     }
 }
