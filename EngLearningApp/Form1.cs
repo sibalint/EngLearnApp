@@ -55,7 +55,6 @@ namespace EngLearningApp
 
         private void btt_close_Click(object sender, EventArgs e)
         {
-
             Application.Exit();
         }
 
@@ -120,11 +119,9 @@ namespace EngLearningApp
                 btl_Questioner.Text = "Question words";
             }
 
-            panelWelcome.Visible = false;
-            panelShowUnKnownList.Visible = false;
-            panelQuestioner.Visible = true;
+            visibility(false, false, true);
             message("Questions started...");
-        }
+        }        
 
         private void btl_NewWords_Click(object sender, EventArgs e)
         {
@@ -135,9 +132,7 @@ namespace EngLearningApp
             {
                 rtb_ShowWords.Text += word + "\n";
             }
-            panelWelcome.Visible = false;
-            panelShowUnKnownList.Visible = true;
-            panelQuestioner.Visible = false;
+            visibility(false, true, false);
         }
 
         private void btl_OldWords_Click(object sender, EventArgs e)
@@ -147,9 +142,8 @@ namespace EngLearningApp
             {
                 rtb_ShowWords.Text += word.english + "\n";
             }
-            panelWelcome.Visible = false;
-            panelShowUnKnownList.Visible = true;
-            panelQuestioner.Visible = false;
+
+            visibility(false, true, false);
         }
 
         private void btl_Settings_Click(object sender, EventArgs e)
@@ -264,6 +258,13 @@ namespace EngLearningApp
         #endregion
 
         #region Private methods
+        private void visibility(bool welcomePanel, bool showWordsPanel, bool questionerPanel)
+        {
+            panelWelcome.Visible = welcomePanel;
+            panelShowUnKnownList.Visible = showWordsPanel;
+            panelQuestioner.Visible = questionerPanel;
+        }
+
         public void message(string message)
         {
             lbMessage.Text = message;
