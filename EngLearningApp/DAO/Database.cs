@@ -80,6 +80,37 @@ namespace EngLearningApp.DAO
         }
 
 
+        private List<Word> getWords()
+        {
+            List<Word> words = new List<Word>();
+
+
+            string sql = "SELECT * FROM Words";
+            var command = new SQLiteCommand(sql, dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                string eng = (string)reader["eng"];
+                string hun = (string)reader["hun"];
+                string color = (string)reader["color"];
+
+                KnownColor colorEnum;
+
+                if (color.Equals("Green"))
+                    colorEnum = KnownColor.Green;
+                else if (color.Equals("Black"))
+                    colorEnum = KnownColor.Black;
+                else
+                    colorEnum = KnownColor.Red;
+
+                words.Add(new Word(eng, hun, colorEnum));
+            }
+
+            return words;
+        }
+
         private bool containsThisKey(string eng)
         {
             string sql = "SELECT eng FROM Words WHERE eng == @eng";
@@ -106,38 +137,6 @@ namespace EngLearningApp.DAO
             command.Parameters.AddWithValue("@eng", eng);
             command.Parameters.AddWithValue("@color", color);
             command.ExecuteNonQuery();
-        }
-        
-
-        private List<Word> getWords()
-        {
-            List<Word> words = new List<Word>();
-            
-            
-            string sql = "SELECT * FROM Words";
-            var command = new SQLiteCommand(sql, dbConnection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            
-
-            while (reader.Read())
-            {
-                string eng = (string)reader["eng"];
-                string hun = (string)reader["hun"];
-                string color = (string)reader["color"];
-
-                KnownColor colorEnum;
-
-                if (color.Equals("Green"))
-                    colorEnum = KnownColor.Green;
-                else if(color.Equals("Black"))
-                    colorEnum = KnownColor.Black;
-                else
-                    colorEnum = KnownColor.Red;
-
-                words.Add(new Word(eng, hun, colorEnum));                
-            }
-
-            return words;
         }
         #endregion
     }
