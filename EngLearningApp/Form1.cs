@@ -157,11 +157,6 @@ namespace EngLearningApp
         private void btGreen_Click(object sender, EventArgs e)
         {
             askAWord(model.KnownColor.Green);
-        }        
-
-        private void btYellow_Click(object sender, EventArgs e)
-        {
-            askAWord(model.KnownColor.Black);
         }
 
         private void btRed_Click(object sender, EventArgs e)
@@ -169,14 +164,19 @@ namespace EngLearningApp
             askAWord(model.KnownColor.Red);
         }
 
-        private void btNext_Click(object sender, EventArgs e)
+        private void btBlack_Click(object sender, EventArgs e)
         {
-            questioner.questionTheNextWord(wordsFromFile);
-        }
+            askAWord(model.KnownColor.Black);
+        }        
 
         private void askAWord(model.KnownColor color)
         {
             questioner.addWordToNewWordsList(color);
+            questioner.questionTheNextWord(wordsFromFile);
+        }
+
+        private void btNext_Click(object sender, EventArgs e)
+        {
             questioner.questionTheNextWord(wordsFromFile);
         }
         #endregion

@@ -245,7 +245,7 @@
             this.button3.Text = "Ignore";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.btYellow_Click);
+            this.button3.Click += new System.EventHandler(this.btBlack_Click);
             // 
             // button1
             // 
