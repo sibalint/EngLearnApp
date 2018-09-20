@@ -14,7 +14,7 @@ namespace EngLearningApp
     public partial class Form1 : Form
     {
         private List<string> wordsFromFile = new List<string>();
-        private List<Word> wordsFromDatabase = new List<Word>();
+        private List<Word> wordsFromDatabase;
 
         private FileReader fileReader;
         private StringToList textFormatter;
