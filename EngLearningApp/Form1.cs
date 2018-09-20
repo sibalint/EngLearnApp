@@ -15,7 +15,6 @@ namespace EngLearningApp
     {
         private List<string> wordsFromFile = new List<string>();
         private List<Word> wordsFromDatabase = new List<Word>();
-        private List<Word> newWords = new List<Word>();
 
         private FileReader fileReader;
         private StringToList textFormatter;
@@ -131,7 +130,7 @@ namespace EngLearningApp
         {
             rtb_ShowWords.Text = "";
 #warning fix it newRedWords find good place
-            var newRedWords = newWords.Where(x => x.knowledgeLevel == model.KnownColor.Red).Select(x => x.english);
+            var newRedWords = questioner.getNewWords().Where(x => x.knowledgeLevel == model.KnownColor.Red).Select(x => x.english);
             foreach (var word in newRedWords)
             {
                 rtb_ShowWords.Text += word + "\n";
@@ -246,7 +245,7 @@ namespace EngLearningApp
             base.OnFormClosing(e);
 
             if (e.CloseReason == CloseReason.WindowsShutDown) return;
-            if (newWords.Count != 0)//new words not empty
+            if (questioner.getNewWordsIsEmpty())//new words not empty
             {
                 // Confirm user wants to close
                 switch (MessageBox.Show(this, "Save new words?", "Closing", MessageBoxButtons.YesNoCancel))
